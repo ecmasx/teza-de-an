@@ -10,7 +10,7 @@ const items = [
 
 export default function Marquee() {
   return (
-    <div className="w-full overflow-hidden bg-white sticky top-0 z-40">
+    <div className="w-full overflow-hidden bg-white sticky top-0 z-40 ">
       <div className="whitespace-nowrap marquee-animate flex items-center text-gray-400 text-sm font-medium h-10">
         {items.map((text, i) => (
           <React.Fragment key={i}>

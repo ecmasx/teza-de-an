@@ -1,9 +1,11 @@
 import React from 'react'
+import Link from 'next/link'
 import { Icon } from './Icons'
+import { instagramLink, tiktokLink } from '@/lib/links'
 
 export default function Footer() {
   return (
-    <footer className="w-full px-4 py-8 bg-white text-black">
+    <footer className="w-full px-8 py-8 bg-white text-black">
       <div className="mx-auto flex flex-col gap-10 lg:flex-row lg:justify-between lg:items-start">
         <div className="flex-1 mb-6 lg:mb-0">
           <h2 className="text-lg font-normal tracking-wide mb-3">SIGN UP & SAVE 10%</h2>
@@ -19,24 +21,24 @@ export default function Footer() {
           <h2 className="text-lg font-normal tracking-wide mb-3">Stula</h2>
           <ul className="space-y-1">
             <li>
-              <a href="#" className="hover:underline font-light">
+              <Link href="/about" className="hover:underline font-light">
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline font-light">
+              <Link href="/collaborations" className="hover:underline font-light">
                 Collaborations
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline font-light">
+              <Link href="/find-a-store" className="hover:underline font-light">
                 Find a Store
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline font-light">
+              <Link href="/contact" className="hover:underline font-light">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -44,29 +46,29 @@ export default function Footer() {
           <h2 className="text-lg font-normal tracking-wide mb-3">ORDERS AND SUPPORT</h2>
           <ul className="space-y-1">
             <li>
-              <a href="#" className="hover:underline font-light">
+              <Link href="/faqs" className="hover:underline font-light">
                 FAQs
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline font-light">
+              <Link href="/returns-portal" className="hover:underline font-light">
                 Returns Portal
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline font-light">
+              <Link href="/shipping" className="hover:underline font-light">
                 Shipping
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline font-light">
+              <Link href="/return-policy" className="hover:underline font-light">
                 Return Policy
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline font-light">
+              <Link href="/payment" className="hover:underline font-light">
                 Payment
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -79,14 +81,16 @@ export default function Footer() {
       <div className="mx-auto mt-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex gap-6 text-2xl">
           <a
-            href="#"
+            href={tiktokLink}
+            target="_blank"
             aria-label="TikTok"
             className="hover:scale-110 transition-transform duration-300 ease-in-out"
           >
             <Icon name="tiktok" />
           </a>
           <a
-            href="#"
+            href={instagramLink}
+            target="_blank"
             aria-label="Instagram"
             className="hover:scale-110 transition-transform duration-300 ease-in-out"
           >
@@ -94,10 +98,10 @@ export default function Footer() {
           </a>
         </div>
         <div className="flex flex-wrap gap-x-8 gap-y-2 text-base underline underline-offset-2">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Accessibility</a>
-          <a href="#">Your Privacy Choices</a>
+          <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/terms-of-use">Terms of Use</Link>
+          <Link href="/accessibility">Accessibility</Link>
+          <Link href="/your-privacy-choices">Your Privacy Choices</Link>
         </div>
       </div>
     </footer>

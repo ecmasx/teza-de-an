@@ -4,6 +4,11 @@ body {
   font-family: var(--font-switzer), Arial, sans-serif;
   background-color: #ffffff;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -14,5 +19,28 @@ body {
 }
 
 .marquee-animate {
-  animation: marquee 20s linear infinite;
+  animation: marquee 30s linear infinite;
+}
+
+.best-sellers-swiper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.best-sellers-swiper .swiper-scrollbar.swiper-scrollbar-horizontal {
+  position: static !important;
+  height: 2.5px !important;
+  width: 80% !important;
+  margin: 1.5rem auto 0 !important;
+  background-color: #e5e5e5 !important;
+  border-radius: 0;
+}
+
+.best-sellers-swiper .swiper-scrollbar-drag {
+  background: #000 !important;
+  cursor: grab;
+}
+
+.best-sellers-swiper .swiper-scrollbar-drag:active {
+  cursor: grabbing;
 }

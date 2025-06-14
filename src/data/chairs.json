@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Classic Lounge Chair", "src": "/models/1.glb", "price": 199 },
+  { "id": 2, "name": "Scandinavian Armchair", "src": "/models/2.glb", "price": 229 },
+  { "id": 3, "name": "Minimalist Dining Chair", "src": "/models/3.glb", "price": 249 },
+  { "id": 4, "name": "Modern Rocking Chair", "src": "/models/4.glb", "price": 279 },
+  { "id": 5, "name": "Industrial Stool", "src": "/models/5.glb", "price": 299 },
+  { "id": 6, "name": "Mid-Century Accent Chair", "src": "/models/6.glb", "price": 219 }
+]

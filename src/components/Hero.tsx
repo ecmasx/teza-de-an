@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function Hero() {
   return (
     <section
-      className="relative w-full h-[calc(100vh-150px)] flex flex-col justify-end md:justify-center md:items-start rounded-[0.75rem] overflow-hidden mb-10"
+      className="relative w-full h-[calc(100vh-150px)] flex flex-col justify-end md:justify-center md:items-start rounded-[0.75rem] overflow-hidden my-4 "
       style={{
         backgroundImage: `url('/images/hero.jpg')`,
         backgroundSize: 'cover',
@@ -31,7 +31,7 @@ export default function Hero() {
           />
         </Link>
       </div>
-      <div className="absolute inset-0 bg-white/30 pointer-events-none" />
+      <div className="absolute inset-0 bg-white/20 pointer-events-none" />
     </section>
   )
 }

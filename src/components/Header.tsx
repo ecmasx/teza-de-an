@@ -3,12 +3,13 @@ import React, { useState } from 'react'
 import { Icon } from './Icons'
 import Link from 'next/link'
 import Image from 'next/image'
+import { instagramLink, tiktokLink } from '@/lib/links'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="w-full flex items-center justify-between px-4 py-3 bg-white sticky top-0 z-50">
+    <header className="w-full flex items-center justify-between px-8 py-3 bg-white sticky top-10 z-50">
       <div className="flex items-center gap-4">
         <button
           aria-label="Open menu"
@@ -18,24 +19,24 @@ export default function Header() {
           <Icon name="burger" />
         </button>
         <nav className="hidden lg:flex gap-6">
-          <a
-            href="#"
+          <Link
+            href="/shop"
             className="relative font-normal after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
           >
             Shop
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/chairs"
             className="relative font-normal after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
           >
             Chairs
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/categories"
             className="relative font-normal after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
           >
             Categories
-          </a>
+          </Link>
         </nav>
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
@@ -72,31 +73,31 @@ export default function Header() {
           <Icon name="close" />
         </button>
         <nav className="flex flex-col gap-4 px-4 uppercase">
-          <a
-            href="#"
+          <Link
+            href="/shop"
             className="relative text-lg font-medium after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
             onClick={() => setMenuOpen(false)}
           >
             Shop
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/chairs"
             className="relative text-lg font-medium after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
             onClick={() => setMenuOpen(false)}
           >
             Chairs
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/categories"
             className="relative text-lg font-medium after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
             onClick={() => setMenuOpen(false)}
           >
             Categories
-          </a>
+          </Link>
         </nav>
         <div className="mt-auto flex items-center gap-6 px-4 pb-8">
           <a
-            href="https://www.instagram.com"
+            href={instagramLink}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -109,7 +110,7 @@ export default function Header() {
             />
           </a>
           <a
-            href="https://www.tiktok.com"
+            href={tiktokLink}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="TikTok"
