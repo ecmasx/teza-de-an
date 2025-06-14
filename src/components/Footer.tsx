@@ -3,10 +3,8 @@ import { Icon } from './Icons'
 
 export default function Footer() {
   return (
-    <footer className="w-full px-4 py-8 bg-white border-t text-black">
-      {/* Верхний блок: email + секции */}
+    <footer className="w-full px-4 py-8 bg-white text-black">
       <div className="mx-auto flex flex-col gap-10 lg:flex-row lg:justify-between lg:items-start">
-        {/* Email подписка */}
         <div className="flex-1 mb-6 lg:mb-0">
           <h2 className="text-lg font-normal tracking-wide mb-3">SIGN UP & SAVE 10%</h2>
           <form className="w-full">
@@ -17,7 +15,6 @@ export default function Footer() {
             />
           </form>
         </div>
-        {/* About */}
         <div className="flex-1 mb-6 lg:mb-0">
           <h2 className="text-lg font-normal tracking-wide mb-3">Stula</h2>
           <ul className="space-y-1">
@@ -43,7 +40,6 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        {/* Support */}
         <div className="flex-1 mb-6 lg:mb-0">
           <h2 className="text-lg font-normal tracking-wide mb-3">ORDERS AND SUPPORT</h2>
           <ul className="space-y-1">
@@ -74,16 +70,13 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        {/* Location */}
         <div className="flex-1">
           <h2 className="text-lg font-normal tracking-wide mb-3">LOCATION PREFERENCES</h2>
           <div className="mb-1">Shipping: Moldova</div>
           <div>Language: Romanian</div>
         </div>
       </div>
-      {/* Соцсети и ссылки */}
       <div className="mx-auto mt-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-        {/* Соцсети */}
         <div className="flex gap-6 text-2xl">
           <a href="#" aria-label="TikTok">
             <Icon name="tiktok" />
@@ -92,7 +85,6 @@ export default function Footer() {
             <Icon name="instagram" />
           </a>
         </div>
-        {/* Ссылки */}
         <div className="flex flex-wrap gap-x-8 gap-y-2 text-base underline underline-offset-2">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>

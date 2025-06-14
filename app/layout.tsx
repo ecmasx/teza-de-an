@@ -3,6 +3,7 @@ import '../src/styles/globals.css'
 import localFont from 'next/font/local'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Marquee from '@/components/Marquee'
 
 const switzer = localFont({
   src: [
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={switzer.variable}>
       <body>
+        <Marquee />
         <Header />
         <main className="px-4 lg:px-8">{children}</main>
         <Footer />
