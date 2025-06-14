@@ -20,7 +20,7 @@ export default function Hero() {
           Modern designs. Real-world previews. Zero guesswork.
         </p>
         <Link
-          href="/products"
+          href="/shop"
           className="group w-fit px-6 py-3 bg-black text-white rounded-full text-base font-mediumduration-300 transition flex items-center gap-8 hover:bg-white hover:text-black"
         >
           Explore Now

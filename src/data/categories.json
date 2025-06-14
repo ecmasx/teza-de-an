@@ -1,0 +1,5 @@
+[
+  { "id": 1, "name": "Kitchen", "slug": "kitchen", "image": "/images/kitchen_categories.jpg" },
+  { "id": 2, "name": "Bedroom", "slug": "bedroom", "image": "/images/bedroom_categories.jpg" },
+  { "id": 3, "name": "Office", "slug": "office", "image": "/images/office_categories.jpg" }
+]
