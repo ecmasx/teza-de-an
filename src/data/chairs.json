@@ -2,140 +2,140 @@
   {
     "id": 1,
     "name": "Classic Lounge Chair",
-    "src": "/models/1.glb",
+    "src": "/modelsobj/1.glb",
     "price": 1299,
     "category": "kitchen"
   },
   {
     "id": 2,
     "name": "Scandinavian Armchair",
-    "src": "/models/2.glb",
+    "src": "/modelsobj/2.glb",
     "price": 1999,
     "category": "bedroom"
   },
   {
     "id": 3,
     "name": "Minimalist Dining Chair",
-    "src": "/models/3.glb",
+    "src": "/modelsobj/3.glb",
     "price": 1099,
     "category": "kitchen"
   },
   {
     "id": 4,
     "name": "Modern Rocking Chair",
-    "src": "/models/4.glb",
+    "src": "/modelsobj/4.glb",
     "price": 1099,
     "category": "bedroom"
   },
   {
     "id": 5,
     "name": "Industrial Stool",
-    "src": "/models/5.glb",
+    "src": "/modelsobj/5.glb",
     "price": 999,
     "category": "kitchen"
   },
   {
     "id": 6,
     "name": "Mid-Century Accent Chair",
-    "src": "/models/6.glb",
+    "src": "/modelsobj/6.glb",
     "price": 1499,
     "category": "office"
   },
   {
     "id": 7,
     "name": "Ergonomic Office Chair",
-    "src": "/models/7.glb",
+    "src": "/modelsobj/7.glb",
     "price": 1399,
     "category": "office"
   },
   {
     "id": 8,
     "name": "Outdoor Patio Chair",
-    "src": "/models/8.glb",
+    "src": "/modelsobj/8.glb",
     "price": 899,
     "category": "kitchen"
   },
   {
     "id": 9,
     "name": "Kids Study Chair",
-    "src": "/models/9.glb",
+    "src": "/modelsobj/9.glb",
     "price": 699,
     "category": "bedroom"
   },
   {
     "id": 10,
     "name": "Foldable Event Chair",
-    "src": "/models/10.glb",
+    "src": "/modelsobj/10.glb",
     "price": 499,
     "category": "office"
   },
   {
     "id": 11,
     "name": "Vintage Bar Chair",
-    "src": "/models/11.glb",
+    "src": "/modelsobj/11.glb",
     "price": 249,
     "category": "kitchen"
   },
   {
     "id": 12,
     "name": "Recliner Comfort",
-    "src": "/models/12.glb",
+    "src": "/modelsobj/12.glb",
     "price": 329,
     "category": "bedroom"
   },
   {
     "id": 13,
     "name": "Executive Leather Chair",
-    "src": "/models/13.glb",
+    "src": "/modelsobj/13.glb",
     "price": 399,
     "category": "office"
   },
   {
     "id": 14,
     "name": "Gaming Racer Seat",
-    "src": "/models/14.glb",
+    "src": "/modelsobj/14.glb",
     "price": 289,
     "category": "bedroom"
   },
   {
     "id": 15,
     "name": "Bean Bag Seat",
-    "src": "/models/15.glb",
+    "src": "/modelsobj/15.glb",
     "price": 159,
     "category": "bedroom"
   },
   {
     "id": 16,
     "name": "Wooden High Chair",
-    "src": "/models/16.glb",
+    "src": "/modelsobj/16.glb",
     "price": 199,
     "category": "kitchen"
   },
   {
     "id": 17,
     "name": "Cafe Bistro Chair",
-    "src": "/models/17.glb",
+    "src": "/modelsobj/17.glb",
     "price": 189,
     "category": "kitchen"
   },
   {
     "id": 18,
     "name": "Spa Relax Chair",
-    "src": "/models/18.glb",
+    "src": "/modelsobj/18.glb",
     "price": 349,
     "category": "bedroom"
   },
   {
     "id": 19,
     "name": "Outdoor Fold Chair",
-    "src": "/models/19.glb",
+    "src": "/modelsobj/19.glb",
     "price": 129,
     "category": "office"
   },
   {
     "id": 20,
     "name": "Luxury Velvet Chair",
-    "src": "/models/20.glb",
+    "src": "/modelsobj/20.glb",
     "price": 459,
     "category": "bedroom"
   }

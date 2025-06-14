@@ -35,10 +35,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <h1 className="text-3xl font-semibold">{chair.name}</h1>
           <p className="text-xl mb-4">{chair.price} mdl</p>
           <div className="flex items-center gap-4">
-            <QRCodeDisplay
-              value={`${typeof window !== 'undefined' ? window.location.href : ''}`}
-              size={64}
-            />
+            <QRCodeDisplay value={`/ar/${id}`} size={64} />
             <p className="text-gray-600">3D model chair perfect for your AR preview.</p>
           </div>
         </div>
