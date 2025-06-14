@@ -52,7 +52,6 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Overlay */}
       <div
         className={`fixed inset-0 bg-black transition-opacity duration-500 ease-in-out lg:hidden z-40 ${
           menuOpen ? 'opacity-40 pointer-events-auto' : 'opacity-0 pointer-events-none'
@@ -60,7 +59,6 @@ export default function Header() {
         onClick={() => setMenuOpen(false)}
       />
 
-      {/* Side drawer */}
       <div
         className={`fixed top-0 left-0 h-full w-4/5 bg-white shadow-lg z-50 flex flex-col pt-8 px-4 gap-6 lg:hidden transform transition-transform duration-500 ease-in-out ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
@@ -96,18 +94,18 @@ export default function Header() {
             Categories
           </a>
         </nav>
-        {/* Social links */}
         <div className="mt-auto flex items-center gap-6 px-4 pb-8">
           <a
             href="https://www.instagram.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
+            className="hover:scale-110"
           >
             <Icon
               name="instagram"
               size={24}
-              className="transition-transform duration-300 ease-in-out hover:scale-110"
+              className="transition-transform duration-300 ease-in-out "
             />
           </a>
           <a
@@ -115,11 +113,12 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="TikTok"
+            className="hover:scale-110 transition-transform duration-300 ease-in-out"
           >
             <Icon
               name="tiktok"
               size={24}
-              className="transition-transform duration-300 ease-in-out hover:scale-110"
+              className="transition-transform duration-300 ease-in-out "
             />
           </a>
         </div>

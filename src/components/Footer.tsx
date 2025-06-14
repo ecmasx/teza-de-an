@@ -78,10 +78,18 @@ export default function Footer() {
       </div>
       <div className="mx-auto mt-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex gap-6 text-2xl">
-          <a href="#" aria-label="TikTok">
+          <a
+            href="#"
+            aria-label="TikTok"
+            className="hover:scale-110 transition-transform duration-300 ease-in-out"
+          >
             <Icon name="tiktok" />
           </a>
-          <a href="#" aria-label="Instagram">
+          <a
+            href="#"
+            aria-label="Instagram"
+            className="hover:scale-110 transition-transform duration-300 ease-in-out"
+          >
             <Icon name="instagram" />
           </a>
         </div>
