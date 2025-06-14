@@ -4,22 +4,25 @@ import NavLink from '@/components/NavLink'
 import React from 'react'
 
 interface CategoryPageProps {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export async function generateMetadata({ params }: CategoryPageProps) {
-  return { title: `${params.slug.charAt(0).toUpperCase()}${params.slug.slice(1)} Chairs` }
+  const { slug } = await params
+  return { title: `${slug.charAt(0).toUpperCase()}${slug.slice(1)} Chairs` }
 }
 
-export default function CategoryPage({ params }: CategoryPageProps) {
-  const filtered = chairs.filter(c => c.category === params.slug)
-  const title = `${params.slug.charAt(0).toUpperCase()}${params.slug.slice(1)} Chairs`
+export default async function CategoryPage({ params }: CategoryPageProps) {
+  const { slug } = await params
+  const filtered = chairs.filter(c => c.category === slug)
+  const title = `${slug.charAt(0).toUpperCase()}${slug.slice(1)} Chairs`
+
   return (
     <section className="w-full py-20 px-4 lg:px-8">
       <div className="flex items-end justify-between mb-12 gap-4">
         <h1 className="text-4xl font-semibold">{title}</h1>
         <NavLink href="/shop" className="text-sm mb-2 inline-block">
-          ← All chairs
+          All chairs
         </NavLink>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">

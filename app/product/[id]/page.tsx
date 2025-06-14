@@ -5,14 +5,15 @@ import Link from 'next/link'
 import React from 'react'
 import QRCodeDisplay from '@/components/QRCodeDisplay'
 
-interface PageProps {
-  params: { id: string }
+interface ProductPageProps {
+  params: Promise<{ id: string }>
 }
 
 export const dynamic = 'force-dynamic'
 
-export default function ProductPage({ params }: PageProps) {
-  const chair = chairs.find(c => c.id === Number(params.id))
+export default async function ProductPage({ params }: ProductPageProps) {
+  const { id } = await params
+  const chair = chairs.find(c => c.id === Number(id))
   if (!chair) return notFound()
 
   return (
