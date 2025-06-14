@@ -1,4 +1,4 @@
-# 🪑 AR Furniture Store
+# 🪑 Stula
 
 Proiect de diplomă — magazin online de mobilier (scaune sau mese) cu vizualizare în realitate augmentată (AR) și cod QR pentru acces mobil.
 
