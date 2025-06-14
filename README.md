@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🪑 AR Furniture Store
 
-## Getting Started
+Proiect de diplomă — magazin online de mobilier (scaune sau mese) cu vizualizare în realitate augmentată (AR) și cod QR pentru acces mobil.
 
-First, run the development server:
+## 📌 Descriere
+
+Această aplicație permite utilizatorilor:
+
+- să exploreze modele de scaune sau mese
+- să selecteze culoarea preferată
+- să vizualizeze produsul în **realitate augmentată** (AR) direct de pe telefon
+- să scaneze un **cod QR** de pe desktop pentru a deschide modelul în AR pe telefon
+
+Tehnologii folosite:
+
+- [Next.js](https://nextjs.org) — framework React pentru web apps
+- [Tailwind CSS](https://tailwindcss.com) — utilitar CSS pentru design rapid și responsiv
+- [model-viewer](https://modelviewer.dev) — vizualizator 3D și AR
+- [QRCode.react](https://www.npmjs.com/package/qrcode.react) — generare coduri QR
+- TypeScript — tipare stricte și claritate în cod
+
+## 📁 Structură fișiere
+
+```bash
+ar-furniture-store/
+├── components/          # Componente UI (carduri produse, QR, viewer AR)
+├── lib/data.ts          # Listă mock de produse
+├── pages/
+│   ├── index.tsx        # Pagina principală (catalog produse)
+│   ├── product/[id].tsx # Pagina individuală a produsului
+│   └── ar/[id].tsx      # Vizualizare AR pentru produs (mobil)
+├── public/models/       # Modele 3D (.glb) și imagini produse
+├── tailwind.config.ts   # Configurație custom Tailwind cu breakpoint-uri
+└── ...
+```
+
+## 🧰 Instalare & rulare
+
+1. Clonează proiectul:
+
+```bash
+git clone https://github.com/ecmasx/ar-furniture-store.git
+cd ar-furniture-store
+```
+
+2. Instalează dependințele:
+
+```bash
+npm install
+```
+
+3. Rulează aplicația în modul dezvoltare:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Accesează [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎯 Funcționalități
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- ✅ Catalog produse cu imagini
+- ✅ Pagină detaliu produs
+- ✅ Selectare culoare (în viitor)
+- ✅ Generare cod QR pentru AR (desktop)
+- ✅ Vizualizare produs în AR (mobil)
 
-## Learn More
+## 📱 AR — Realitate Augmentată
 
-To learn more about Next.js, take a look at the following resources:
+Se folosește `<model-viewer>` pentru a încărca modele `.glb`. Pe telefoane compatibile, utilizatorul poate vedea produsul în spațiul real prin camera telefonului.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Android: Scene Viewer
+- iOS: Quick Look
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧠 Viitoare îmbunătățiri
 
-## Deploy on Vercel
+- Integrare CMS (ex: Shopify Headless sau Sanity)
+- Căutare și filtrare produse
+- Selectare interactivă de culori și materiale
+- Adăugare coș de cumpărături și checkout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 👨‍🎓 Autor
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Realizat de [Maxim Madan](https://github.com/ecmasx)  
+Proiect pentru **teza de an**  
+Tehnologii web moderne – 2025
