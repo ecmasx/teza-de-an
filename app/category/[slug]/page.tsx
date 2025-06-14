@@ -3,15 +3,15 @@ import ChairCard from '@/components/ChairCard'
 import NavLink from '@/components/NavLink'
 import React from 'react'
 
-interface PageProps {
+interface CategoryPageProps {
   params: { slug: string }
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: CategoryPageProps) {
   return { title: `${params.slug.charAt(0).toUpperCase()}${params.slug.slice(1)} Chairs` }
 }
 
-export default function CategoryPage({ params }: PageProps) {
+export default function CategoryPage({ params }: CategoryPageProps) {
   const filtered = chairs.filter(c => c.category === params.slug)
   const title = `${params.slug.charAt(0).toUpperCase()}${params.slug.slice(1)} Chairs`
   return (
