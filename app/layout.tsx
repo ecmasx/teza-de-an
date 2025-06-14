@@ -23,8 +23,12 @@ const switzer = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'AR Furniture Store',
-  description: 'Aici vei găsi cele mai bune produse de mobilier 3D',
+  title: 'STULA',
+  description: 'Modern furniture with AR preview',
+  icons: {
+    icon: '/images/favicon.png',
+    apple: '/images/favicon.png',
+  },
 }
 
 export default function RootLayout({
