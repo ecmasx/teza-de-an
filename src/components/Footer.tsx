@@ -1,93 +1,126 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { Icon } from './Icons'
-import { instagramLink, tiktokLink } from '@/lib/links'
+import { instagramLink } from '@/lib/links'
+import { promoCode } from '@/lib/data'
+
+const underlineClass =
+  'relative after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 after:ease-in-out hover:after:w-full'
 
 export default function Footer() {
+  const [email, setEmail] = useState('')
+  const [showPopup, setShowPopup] = useState(false)
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    if (email) {
+      setShowPopup(true)
+      setEmail('')
+    }
+  }
+
   return (
-    <footer className="w-full px-8 py-8 bg-white text-black">
-      <div className="mx-auto flex flex-col gap-10 lg:flex-row lg:justify-between lg:items-start">
+    <footer className="w-full px-8 py-8  bg-white text-black border-t border-black/40 relative">
+      {showPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+          <div className="relative z-10 bg-white rounded-2xl shadow-xl px-8 py-10 flex flex-col items-center max-w-xs w-full border border-black/10">
+            <h3 className="text-xl font-bold mb-4 text-center">Your Promo Code</h3>
+            <div className="w-full flex justify-center mb-2">
+              <div className="border-2 border-dashed border-yellow-400 rounded-xl px-6 py-3 text-2xl font-mono font-bold tracking-widest bg-yellow-50 text-yellow-700 shadow-inner relative">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 w-10 h-1 bg-yellow-400 rounded-full" />
+                {promoCode}
+                <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-10 h-1 bg-yellow-400 rounded-full" />
+              </div>
+            </div>
+            <div className="text-center">
+              <p className="text-gray-700 mt-2 mb-4">
+                Use this code at checkout to save 10% on your first purchase!
+              </p>
+              <button
+                aria-label="Copy to clipboard"
+                className="px-4 py-2 bg-black text-white rounded-full font-semibold hover:bg-white hover:text-black transition hover:cursor-pointer"
+                onClick={() => {
+                  navigator.clipboard.writeText('SAVE10')
+                  setShowPopup(false)
+                }}
+              >
+                Copy to clipboard
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      <div className="mx-auto flex flex-col gap-1 md:gap-10 lg:flex-row lg:justify-between lg:items-start">
         <div className="flex-1 mb-6 lg:mb-0">
-          <h2 className="text-lg font-normal tracking-wide mb-3">SIGN UP & SAVE 10%</h2>
-          <form className="w-full">
-            <input
-              type="email"
-              placeholder="Enter email address"
-              className="w-full border border-black rounded-xl px-4 py-4 text-lg focus:outline-none"
-            />
+          <h2 className="text-md font-normal tracking-wide mb-3">Sign up and save 10%</h2>
+          <form className="w-full" onSubmit={handleSubmit}>
+            <div className="flex w-full max-w-xl mx-auto gap-0 rounded-md overflow-hidden border border-black/20 bg-white">
+              <input
+                type="email"
+                placeholder="Enter email address"
+                className="flex-1 px-3 py-2 text-lg focus:outline-none bg-transparent"
+                value={email}
+                autoComplete="email"
+                onChange={e => setEmail(e.target.value)}
+              />
+              <button
+                type="submit"
+                className="px-3 py-3 bg-black text-white rounded-none font-normal border-l border-black/20 transition-all duration-200 hover:bg-white hover:cursor-pointer hover:text-black hover:border-black focus:outline-none focus:ring-2 focus:ring-black"
+              >
+                Sign up
+              </button>
+            </div>
           </form>
         </div>
         <div className="flex-1 mb-6 lg:mb-0">
-          <h2 className="text-lg font-normal tracking-wide mb-3">Stula</h2>
+          <h2 className="text-lg font-bold mb-3">Stula</h2>
           <ul className="space-y-1">
             <li>
-              <Link href="/about" className="hover:underline font-light">
+              <Link href="/about" className={underlineClass}>
                 About
               </Link>
             </li>
             <li>
-              <Link href="/collaborations" className="hover:underline font-light">
-                Collaborations
-              </Link>
-            </li>
-            <li>
-              <Link href="/find-a-store" className="hover:underline font-light">
-                Find a Store
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:underline font-light">
+              <Link href="/contact" className={underlineClass}>
                 Contact
               </Link>
             </li>
           </ul>
         </div>
         <div className="flex-1 mb-6 lg:mb-0">
-          <h2 className="text-lg font-normal tracking-wide mb-3">ORDERS AND SUPPORT</h2>
+          <h2 className="text-lg font-bold mb-3">Orders and Support</h2>
           <ul className="space-y-1">
             <li>
-              <Link href="/faqs" className="hover:underline font-light">
+              <Link href="/faqs" className={underlineClass}>
                 FAQs
               </Link>
             </li>
             <li>
-              <Link href="/returns-portal" className="hover:underline font-light">
+              <Link href="/returns-portal" className={underlineClass}>
                 Returns Portal
               </Link>
             </li>
             <li>
-              <Link href="/shipping" className="hover:underline font-light">
+              <Link href="/shipping" className={underlineClass}>
                 Shipping
-              </Link>
-            </li>
-            <li>
-              <Link href="/return-policy" className="hover:underline font-light">
-                Return Policy
-              </Link>
-            </li>
-            <li>
-              <Link href="/payment" className="hover:underline font-light">
-                Payment
               </Link>
             </li>
           </ul>
         </div>
-        <div className="flex-1">
-          <h2 className="text-lg font-normal tracking-wide mb-3">LOCATION PREFERENCES</h2>
-          <div className="mb-1">Shipping: Moldova</div>
-          <div>Language: Romanian</div>
+        <div className="flex-1 mb-6 lg:mb-0">
+          <h2 className="text-lg font-bold mb-3">Terms and Conditions</h2>
+          <div className={underlineClass + ' mb-1 w-fit'}>
+            <Link href="/terms-of-use">Terms of Use</Link>
+          </div>
+          <div className={underlineClass + ' w-fit'}>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+          </div>
         </div>
-      </div>
-      <div className="mx-auto mt-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-        <div className="flex gap-6 text-2xl">
-          <a
-            href={tiktokLink}
-            target="_blank"
-            aria-label="TikTok"
-            className="hover:scale-110 transition-transform duration-300 ease-in-out"
-          >
-            <Icon name="tiktok" />
-          </a>
+        <div className="flex-1">
+          <h2 className="text-lg font-bold mb-3">Follow us</h2>
           <a
             href={instagramLink}
             target="_blank"
@@ -96,12 +129,6 @@ export default function Footer() {
           >
             <Icon name="instagram" />
           </a>
-        </div>
-        <div className="flex flex-wrap gap-x-8 gap-y-2 text-base underline underline-offset-2">
-          <Link href="/privacy-policy">Privacy Policy</Link>
-          <Link href="/terms-of-use">Terms of Use</Link>
-          <Link href="/accessibility">Accessibility</Link>
-          <Link href="/your-privacy-choices">Your Privacy Choices</Link>
         </div>
       </div>
     </footer>

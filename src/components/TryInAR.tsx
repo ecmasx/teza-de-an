@@ -1,11 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import QRCodeDisplay from '@/components/QRCodeDisplay'
-import Link from 'next/link'
 
 export default function TryInAR() {
-  const shopUrl = typeof window !== 'undefined' ? window.location.origin + '/shop' : '/shop'
-
   return (
     <section className="w-full bg-gray-50/50 py-12 md:py-16 px-4 lg:px-8 md:rounded-xl">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
@@ -26,16 +22,6 @@ export default function TryInAR() {
             Preview every chair directly in your space. Scan the QR code or open a product on your
             phone and tap the AR icon.
           </p>
-
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-            <QRCodeDisplay value={shopUrl} size={96} />
-            <Link
-              href="/shop"
-              className="text-sm px-6 py-2 sm:py-3 border border-black rounded-full font-medium transition-colors hover:bg-black hover:text-white"
-            >
-              Shop now
-            </Link>
-          </div>
         </div>
       </div>
     </section>

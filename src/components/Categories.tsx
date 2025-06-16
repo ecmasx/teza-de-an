@@ -3,14 +3,19 @@ import Image from 'next/image'
 import categories from '@/data/categories.json'
 import NavLink from '@/components/NavLink'
 import Link from 'next/link'
+import { Icon } from './Icons'
 
 export default function Categories() {
   return (
     <section className="w-full py-16 px-4 lg:px-8">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-3xl lg:text-4xl font-semibold">By Category</h2>
-        <NavLink href="/shop" className="uppercase tracking-wide text-sm font-medium">
+        <NavLink
+          href="/shop"
+          className="inline-flex items-center gap-2 text-sm px-4 w-fit py-2 rounded-full border border-black/20 bg-white shadow hover:bg-black hover:text-white transition cursor-pointer whitespace-nowrap"
+        >
           Shop all
+          <Icon name="arrow" size={18} className="rotate-180" />
         </NavLink>
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -25,7 +30,7 @@ export default function Categories() {
               alt={cat.name}
               width={600}
               height={800}
-              className="w-full h-96 sm:h-96 lg:h-[30rem] object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-120 md:h-180 object-cover object-center transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             <div className="absolute inset-0 flex flex-col justify-between p-4 text-white">

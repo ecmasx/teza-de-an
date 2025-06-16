@@ -1,32 +1,23 @@
 import React from 'react'
 
 interface IconProps {
-  name: 'tiktok' | 'instagram' | 'search' | 'cart' | 'burger' | 'logo' | 'close' | 'arrow'
+  name:
+    | 'instagram'
+    | 'search'
+    | 'cart'
+    | 'burger'
+    | 'logo'
+    | 'close'
+    | 'arrow'
+    | 'minus'
+    | 'plus'
+    | 'copy'
   className?: string
   size?: number
 }
 
 export function Icon({ name, className = '', size = 28 }: IconProps) {
   switch (name) {
-    case 'tiktok':
-      return (
-        <svg
-          fill="currentColor"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
-          id="tiktok"
-          data-name="Flat Color"
-          xmlns="http://www.w3.org/2000/svg"
-          className={className}
-        >
-          <path
-            id="primary"
-            d="M21,7V9a1,1,0,0,1-1,1,8,8,0,0,1-4-1.08V15.5A6.5,6.5,0,1,1,6.53,9.72a1,1,0,0,1,1.47.9v2.52a.92.92,0,0,1-.28.62,2.49,2.49,0,0,0,2,4.23A2.61,2.61,0,0,0,12,15.35V3a1,1,0,0,1,1-1h2.11a1,1,0,0,1,1,.83A4,4,0,0,0,20,6,1,1,0,0,1,21,7Z"
-            style={{ fill: 'rgb(0, 0, 0)' }}
-          ></path>
-        </svg>
-      )
     case 'instagram':
       return (
         <svg
@@ -125,21 +116,24 @@ export function Icon({ name, className = '', size = 28 }: IconProps) {
           xmlns="http://www.w3.org/2000/svg"
           className={className}
         >
-          <g clipPath="url(#clip0_6_27)">
-            <path
-              d="M4.67646 3.76494L3.5 4.94141L18.5588 20.0002L19.7352 18.8237L4.67646 3.76494Z"
-              fill="currentColor"
-            />
-            <path
-              d="M19.736 5.17646L18.5596 4L3.50081 19.0588L4.67727 20.2352L19.736 5.17646Z"
-              fill="currentColor"
-            />
-          </g>
-          <defs>
-            <clipPath id="clip0_6_27">
-              <rect width="17" height="18" fill="currentColor" transform="translate(3.5 3)" />
-            </clipPath>
-          </defs>
+          <line
+            x1="6"
+            y1="6"
+            x2="18"
+            y2="18"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+          <line
+            x1="18"
+            y1="6"
+            x2="6"
+            y2="18"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
         </svg>
       )
     case 'arrow':
@@ -165,7 +159,67 @@ export function Icon({ name, className = '', size = 28 }: IconProps) {
           </defs>
         </svg>
       )
-
+    case 'minus':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+        >
+          <rect x="5" y="11" width="14" height="2" rx="1" fill="currentColor" />
+        </svg>
+      )
+    case 'plus':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+        >
+          <line
+            x1="12"
+            y1="5"
+            x2="12"
+            y2="19"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+          <line
+            x1="5"
+            y1="12"
+            x2="19"
+            y2="12"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
+      )
+    case 'copy':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+        >
+          <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" strokeWidth="2" />
+          <path
+            d="M5 15H4C2.89543 15 2 14.1046 2 13V4C2 2.89543 2.89543 2 4 2H13C14.1046 2 15 2.89543 15 4V5"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+        </svg>
+      )
     default:
       return null
   }

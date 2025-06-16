@@ -3,16 +3,17 @@ import React, { useState, useRef, useEffect } from 'react'
 import { Icon } from './Icons'
 import Link from 'next/link'
 import Image from 'next/image'
-import { instagramLink, tiktokLink } from '@/lib/links'
-import chairs from '@/data/chairs.json'
+import chairs from '@/data/chairs'
 import NavLink from '@/components/NavLink'
+import { useCart } from '@/context/CartContext'
+import ModelViewer from '@/components/ModelViewer'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [cartOpen, setCartOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState('')
   const searchRef = useRef<HTMLDivElement>(null)
+  const { cart, cartOpen, openCart, closeCart, removeFromCart, decreaseItem, addToCart } = useCart()
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -31,8 +32,23 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [searchOpen])
 
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      const cartDrawer = document.querySelector('.cart-drawer')
+      if (cartOpen && cartDrawer && !cartDrawer.contains(e.target as Node)) {
+        cartDrawer.classList.add('closing')
+        setTimeout(() => {
+          closeCart()
+          cartDrawer.classList.remove('closing')
+        }, 300)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [cartOpen, closeCart])
+
   return (
-    <header className="w-full flex items-center justify-between px-8 py-3 bg-white sticky top-10 z-50">
+    <header className="w-full flex items-center justify-between px-8 py-3 bg-white sticky top-10 z-50 border-b border-black/40">
       <div className="flex items-center gap-4">
         <button
           aria-label="Open menu"
@@ -52,7 +68,7 @@ export default function Header() {
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
         <Link href="/" className="text-2xl font-light tracking-wide">
-          <Image src="/images/logo.png" alt="logo" width={100} height={100} />
+          <Image src="/images/logo.png" alt="logo" width={96} height={96} />
         </Link>
       </div>
       <div className="flex items-center gap-4">
@@ -104,101 +120,142 @@ export default function Header() {
           className={`p-2 cursor-pointer transition-transform duration-300 ${
             cartOpen ? 'scale-90' : ''
           }`}
-          onClick={() => setCartOpen(true)}
+          onClick={openCart}
         >
           <Icon name="cart" />
         </button>
       </div>
 
       <div
-        className={`fixed inset-0 bg-black transition-opacity duration-500 ease-in-out lg:hidden z-40 ${
-          menuOpen ? 'opacity-40 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
+          menuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setMenuOpen(false)}
       />
-
       <div
-        className={`fixed inset-0 bg-black transition-opacity duration-500 ease-in-out z-40 ${
-          cartOpen ? 'opacity-40 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-        onClick={() => setCartOpen(false)}
-      />
-
-      <div
-        className={`fixed top-0 left-0 h-full w-4/5 bg-white shadow-lg z-50 flex flex-col pt-8 px-4 gap-6 lg:hidden transform transition-transform duration-500 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-4/5 max-w-xs bg-white rounded-r-3xl shadow-2xl z-50 flex flex-col pt-8 px-8 gap-8 transform transition-transform duration-300 ease-in-out lg:hidden ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <button
           aria-label="Close menu"
-          className="self-end w-16 h-16 flex items-center justify-center cursor-pointer"
+          className="self-end mb-4 p-2 rounded-full hover:bg-gray-100 transition-transform duration-200 hover:rotate-90"
           onClick={() => setMenuOpen(false)}
         >
-          <Icon name="close" />
+          <Icon name="close" size={28} />
         </button>
-        <nav className="flex flex-col gap-4 px-4 uppercase">
+        <nav className="flex flex-col gap-6 mt-4">
           <NavLink
             href="/shop"
-            className="relative text-lg font-medium after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
+            className="text-lg font-semibold tracking-wide hover:text-yellow-500 transition"
             onClick={() => setMenuOpen(false)}
           >
             Shop
           </NavLink>
           <NavLink
             href="/categories"
-            className="relative text-lg font-medium after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
+            className="text-lg font-semibold tracking-wide hover:text-yellow-500 transition"
             onClick={() => setMenuOpen(false)}
           >
             Categories
           </NavLink>
         </nav>
-        <div className="mt-auto flex items-center gap-6 px-4 pb-8">
+        <div className="mt-auto flex flex-col items-center gap-2 pb-8">
+          <span className="text-xs text-gray-400 mb-1">Follow us</span>
           <a
-            href={instagramLink}
+            href="https://instagram.com/"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-gray-700 hover:text-pink-500 transition-colors"
             aria-label="Instagram"
-            className="hover:scale-110 cursor-pointer"
           >
-            <Icon
-              name="instagram"
-              size={24}
-              className="transition-transform duration-300 ease-in-out cursor-pointer"
-            />
-          </a>
-          <a
-            href={tiktokLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="TikTok"
-            className="hover:scale-110 transition-transform duration-300 ease-in-out cursor-pointer"
-          >
-            <Icon
-              name="tiktok"
-              size={24}
-              className="transition-transform duration-300 ease-in-out cursor-pointer"
-            />
+            <Icon name="instagram" size={28} />
           </a>
         </div>
       </div>
 
       <div
-        className={`fixed top-0 right-0 h-full w-4/5 md:w-96 bg-white shadow-lg z-50 flex flex-col pt-8 px-6 md:px-8 gap-6 transform transition-transform duration-500 ease-in-out ${
+        className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
+          cartOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={closeCart}
+      />
+      <div
+        className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-white rounded-l-3xl shadow-2xl z-50 flex flex-col pt-8 px-8 gap-6 transform transition-transform duration-300 ease-in-out cart-drawer ${
           cartOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex items-center justify-between">
-          <button
-            aria-label="Close cart"
-            className="self-end w-16 h-16 flex items-center justify-center cursor-pointer"
-            onClick={() => setCartOpen(false)}
-          >
-            <Icon name="close" />
-          </button>
-          <h2 className="text-xl font-semibold">Your Cart</h2>
+        <button
+          aria-label="Close cart"
+          className="self-end mb-4 p-2 rounded-full hover:bg-gray-100 transition-transform duration-200 hover:rotate-90"
+          onClick={closeCart}
+        >
+          <Icon name="close" size={28} />
+        </button>
+        <h2 className="text-xl font-semibold">Your Cart</h2>
+        <div className="flex-1 flex flex-col items-center justify-center text-gray-500 w-full">
+          {cart.length === 0 ? (
+            <div>Cart is empty</div>
+          ) : (
+            <div className="w-full flex flex-col justify-between h-full gap-4">
+              {cart.map(item => {
+                const chair = chairs.find(c => c.id === item.id)
+                if (!chair) return null
+                return (
+                  <div key={item.id} className="flex items-center gap-4 py-2">
+                    <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden border">
+                      <ModelViewer
+                        src={chair.src}
+                        auto-rotate
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div className="flex-1 flex flex-col">
+                      <span className="font-medium text-gray-900">{chair.name}</span>
+                      <span className="text-sm text-yellow-500">{chair.price} mdl</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <button
+                        aria-label="Decrease quantity"
+                        className="p-1 text-black hover:text-red-500 transition-colors"
+                        onClick={() => {
+                          if (item.quantity > 1) {
+                            decreaseItem(item.id)
+                          } else {
+                            removeFromCart(item.id)
+                          }
+                        }}
+                      >
+                        <Icon name="minus" className="hover:cursor-pointer" size={24} />
+                      </button>
+                      <span className="text-sm font-semibold">{item.quantity}</span>
+                      <button
+                        aria-label="Increase quantity"
+                        className="p-1 text-black hover:text-green-600 transition-colors"
+                        onClick={() => addToCart(item.id, 1)}
+                      >
+                        <Icon name="plus" className="hover:cursor-pointer" size={24} />
+                      </button>
+                    </div>
+                  </div>
+                )
+              })}
+
+              <div className="mt-4 text-right border-t border-black py-2">
+                <span className="text-lg text-black font-semibold">
+                  Total:{' '}
+                  {cart.reduce((sum, item) => {
+                    const chair = chairs.find(c => c.id === item.id)
+                    return sum + (chair ? chair.price * item.quantity : 0)
+                  }, 0)}{' '}
+                  mdl
+                </span>
+              </div>
+            </div>
+          )}
         </div>
-        <div className="flex-1 flex items-center justify-center text-gray-500">Cart is empty</div>
-        <button className="mt-auto mb-8 w-full bg-black text-white py-3 rounded-full font-medium">
+
+        <button className="mt-auto mb-8 w-full bg-black text-white py-3 rounded-full font-medium hover:cursor-pointer hover:bg-white hover:text-black border border-black transition-colors">
           Checkout
         </button>
       </div>

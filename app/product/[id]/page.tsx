@@ -1,28 +1,51 @@
-import chairs from '@/data/chairs.json'
+'use client'
+
+import chairs from '@/data/chairs'
 import ModelViewer from '@/components/ModelViewer'
-import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import React from 'react'
 import QRCodeDisplay from '@/components/QRCodeDisplay'
+import { Icon } from '@/components/Icons'
+import { useCart } from '@/context/CartContext'
 
 interface ProductPageProps {
   params: Promise<{ id: string }>
 }
 
-export const dynamic = 'force-dynamic'
+export default function ProductPage({ params }: ProductPageProps) {
+  const [idObj, setIdObj] = React.useState<{ id: number } | null>(null)
+  const [animate, setAnimate] = React.useState(false)
+  const { addToCart, getItemCount, openCart } = useCart()
+  const [qty, setQty] = React.useState(1)
 
-export default async function ProductPage({ params }: ProductPageProps) {
-  const { id } = await params
-  const chair = chairs.find(c => c.id === Number(id))
-  if (!chair) return notFound()
+  React.useEffect(() => {
+    params.then(({ id }) => setIdObj({ id: Number(id) }))
+  }, [params])
+
+  const chair = idObj ? chairs.find(c => c.id === idObj.id) : null
+  const count = chair ? getItemCount(chair.id) : 0
+
+  React.useEffect(() => {
+    if (count > 0) {
+      setAnimate(true)
+      const t = setTimeout(() => setAnimate(false), 250)
+      return () => clearTimeout(t)
+    }
+  }, [count])
+
+  if (!chair) return null
 
   return (
-    <section className="w-full py-20 px-4 lg:px-8 max-w-6xl mx-auto">
-      <Link href="/shop" className="text-sm mb-6 inline-block">
+    <section className="w-full py-16 px-4 lg:px-8 max-w-6xl mx-auto">
+      <Link
+        href="/shop"
+        className="inline-flex items-center gap-2 text-sm mb-8 px-4 py-2 rounded-full border border-black/20 bg-white shadow hover:bg-black hover:text-white transition"
+      >
+        <Icon name="arrow" size={18} className="-rotate-180" />
         Back to shop
       </Link>
-      <div className="grid md:grid-cols-2 gap-12">
-        <div className="w-full aspect-[3/4] bg-white rounded-xl shadow border p-4 flex items-center justify-center no-swipe">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="w-full aspect-[3/4] bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-2xl shadow-xl border border-gray-200 flex items-center justify-center p-6">
           <ModelViewer
             src={chair.src}
             camera-controls
@@ -31,12 +54,49 @@ export default async function ProductPage({ params }: ProductPageProps) {
             className="w-full h-full object-contain"
           />
         </div>
-        <div className="flex flex-col gap-4">
-          <h1 className="text-3xl font-semibold">{chair.name}</h1>
-          <p className="text-xl mb-4">{chair.price} mdl</p>
-          <div className="flex items-center gap-4">
-            <QRCodeDisplay value={`/ar/${id}`} size={64} />
-            <p className="text-gray-600">3D model chair perfect for your AR preview.</p>
+        <div className="flex flex-col gap-6">
+          <h1 className="text-4xl font-extrabold text-gray-900 mb-2">{chair.name}</h1>
+          <div className="flex items-center gap-4 mb-4">
+            <span className="text-2xl font-bold text-yellow-500">{chair.price} mdl</span>
+          </div>
+          <div className="flex items-center gap-4 w-full max-w-xs">
+            <button
+              className="w-10 h-10 rounded-full border border-black/20 bg-white text-2xl font-bold flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed hover:bg-black hover:text-white hover:cursor-pointer"
+              onClick={() => setQty(qty > 1 ? qty - 1 : 1)}
+              aria-label="Decrease"
+              disabled={qty <= 1}
+            >
+              –
+            </button>
+            <span
+              className={`text-xl font-semibold w-8 text-center transition-transform duration-200 ${
+                animate ? 'scale-125' : ''
+              }`}
+            >
+              {qty}
+            </span>
+            <button
+              className="w-10 h-10 rounded-full border border-black/20 bg-white text-2xl font-bold flex items-center justify-center hover:bg-black hover:text-white transition-all hover:cursor-pointer"
+              onClick={() => setQty(qty + 1)}
+              aria-label="Increase"
+            >
+              +
+            </button>
+          </div>
+          <button
+            className="w-full mt-4 px-6 py-3 bg-black text-white rounded-full font-medium border border-black/20 hover:bg-white hover:text-black transition-all hover:cursor-pointer"
+            onClick={() => {
+              addToCart(chair.id, qty)
+              openCart()
+            }}
+          >
+            Add to Cart
+          </button>
+          <div className="flex flex-col gap-2 mt-4">
+            <span className="text-sm text-gray-500 font-medium mb-1">Scan to preview in AR:</span>
+            <div className="inline-block bg-white rounded-xl shadow p-3 border border-gray-100 w-fit">
+              <QRCodeDisplay value={`/ar/${chair.id}`} size={80} />
+            </div>
           </div>
         </div>
       </div>

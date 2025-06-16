@@ -1,5 +1,5 @@
 import AutoARViewer from '@/components/AutoARViewer'
-import chairs from '@/data/chairs.json'
+import chairs from '@/data/chairs'
 import { notFound } from 'next/navigation'
 
 interface ARPageProps {

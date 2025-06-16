@@ -1,10 +1,17 @@
-import chairs from '@/data/chairs.json'
+import chairs from '@/data/chairs'
 import ChairCard from '@/components/ChairCard'
-import NavLink from '@/components/NavLink'
 import React from 'react'
+import { Icon } from '@/components/Icons'
+import Link from 'next/link'
 
 interface SearchParams {
   category?: string
+}
+
+const categoryTitles: Record<string, string> = {
+  kitchen: 'Kitchen Chairs',
+  bedroom: 'Bedroom Chairs',
+  office: 'Office Chairs',
 }
 
 export default async function ShopAllPage({
@@ -15,18 +22,23 @@ export default async function ShopAllPage({
   const { category } = (await searchParams) ?? {}
 
   const filtered = category ? chairs.filter(c => c.category === category) : chairs
+  const title = category ? categoryTitles[category] || 'Chairs' : 'Shop All'
 
   return (
-    <section className="w-full py-20 px-4 lg:px-8">
-      <div className="flex items-end justify-between mb-12 gap-4">
-        <h1 className="text-4xl font-semibold">Shop Chairs</h1>
-        <NavLink href="/" className="text-sm mb-2 inline-block">
+    <section className="w-full py-20 lg:px-8">
+      <div className="flex items-end justify-between flex-wrap mb-12 gap-4">
+        <h1 className="text-4xl font-semibold whitespace-nowrap">{title}</h1>
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-sm px-4 w-fit py-2 rounded-full border border-black/20 bg-white shadow hover:bg-black hover:text-white transition cursor-pointer whitespace-nowrap"
+        >
+          <Icon name="arrow" size={18} className="-rotate-180" />
           Back to home
-        </NavLink>
+        </Link>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
         {filtered.map(chair => (
-          <ChairCard key={chair.id} chair={chair} showQR={false} />
+          <ChairCard key={chair.id} chair={chair} />
         ))}
       </div>
     </section>
