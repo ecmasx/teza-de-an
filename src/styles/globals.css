@@ -44,3 +44,7 @@ html {
 .best-sellers-swiper .swiper-scrollbar-drag:active {
   cursor: grabbing;
 }
+
+.hero-dvh {
+  min-height: 100dvh;
+}
