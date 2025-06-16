@@ -28,7 +28,7 @@ export default function BestSellers() {
         <h2 className="text-3xl lg:text-4xl font-semibold">Best Sellers</h2>
         <NavLink
           href="/shop"
-          className="inline-flex items-center gap-2 text-sm px-4 w-fit py-2 rounded-full border border-black/20 bg-white shadow hover:bg-black hover:text-white transition cursor-pointer whitespace-nowrap"
+          className="inline-flex items-center gap-2 text-sm px-4 w-fit py-2 rounded-full border border-black/20 bg-white shadow hover:bg-black hover:text-white transition cursor-pointer whitespace-nowrap !no-underline hover:!no-underline focus:!no-underline"
         >
           Shop all
           <Icon name="arrow" size={18} />
