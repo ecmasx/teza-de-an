@@ -1,54 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-
-const faqs = [
-  {
-    question: 'What materials are your chairs made from?',
-    answer:
-      'Our chairs are made from high-quality wood, metal, and eco-friendly fabrics to ensure durability and comfort.',
-  },
-  {
-    question: 'Do you offer international shipping?',
-    answer:
-      'Currently, we only ship within Moldova. Stay tuned for international shipping updates!',
-  },
-  {
-    question: 'Can I preview the chair in my room before buying?',
-    answer: 'Yes! Use our AR feature on your phone to preview any chair in your space.',
-  },
-  {
-    question: 'What is your return policy?',
-    answer:
-      'You can return any product within 30 days of delivery. Please visit our Returns Portal for more details.',
-  },
-  {
-    question: 'How do I care for my furniture?',
-    answer:
-      'We recommend regular dusting and using a damp cloth for cleaning. Avoid harsh chemicals.',
-  },
-  {
-    question: 'Are the chairs assembled on delivery?',
-    answer:
-      'Most chairs come pre-assembled. For some models, minimal assembly is required and instructions are included.',
-  },
-  {
-    question: 'Can I track my order?',
-    answer: 'Yes, after your order is shipped, you will receive a tracking number via email.',
-  },
-  {
-    question: 'Do you offer bulk discounts?',
-    answer:
-      'Yes, we offer discounts for bulk and business orders. Please contact us for a custom quote.',
-  },
-  {
-    question: 'How can I contact support?',
-    answer: 'You can reach our support team via the Contact page or by emailing support@stula.com.',
-  },
-  {
-    question: 'Is there a warranty on your products?',
-    answer: 'All our products come with a 2-year warranty covering manufacturing defects.',
-  },
-]
+import texts from '@/data/texts.json'
 
 function AccordionItem({
   question,
@@ -120,9 +72,9 @@ export default function FAQPage() {
 
   return (
     <section className="max-w-2xl mx-auto py-16 px-4">
-      <h1 className="text-4xl font-semibold mb-8 text-center">Frequently Asked Questions</h1>
+      <h1 className="text-4xl font-semibold mb-8 text-center">{texts.faqs.title}</h1>
       <div>
-        {faqs.map((faq, idx) => (
+        {texts.faqs.items.map((faq, idx) => (
           <AccordionItem
             key={faq.question}
             question={faq.question}

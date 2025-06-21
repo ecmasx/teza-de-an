@@ -4,7 +4,9 @@ import localFont from 'next/font/local'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Marquee from '@/components/Marquee'
+import Chatbot from '@/components/Chatbot'
 import { CartProvider } from '@/context/CartContext'
+import { ChatProvider } from '@/context/ChatContext'
 
 const switzer = localFont({
   src: [
@@ -41,10 +43,13 @@ export default function RootLayout({
     <html lang="en" className={switzer.variable}>
       <body>
         <CartProvider>
-          <Marquee />
-          <Header />
-          <main className="px-4 lg:px-8">{children}</main>
-          <Footer />
+          <ChatProvider>
+            <Marquee />
+            <Header />
+            <main className="px-4 lg:px-8">{children}</main>
+            <Footer />
+            <Chatbot />
+          </ChatProvider>
         </CartProvider>
       </body>
     </html>

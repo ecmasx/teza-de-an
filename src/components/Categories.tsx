@@ -16,7 +16,7 @@ export default function Categories() {
           className="inline-flex items-center gap-2 text-sm px-4 w-fit py-2 rounded-full border border-black/20 bg-white shadow hover:bg-black hover:text-white transition cursor-pointer whitespace-nowrap !no-underline hover:!no-underline focus:!no-underline"
         >
           {texts.sections.shopAll}
-          <Icon name="arrow" size={18} className="rotate-180" />
+          <Icon name="arrow" size={18} />
         </NavLink>
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

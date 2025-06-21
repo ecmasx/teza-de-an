@@ -4,7 +4,7 @@ import chairs from '@/data/chairs'
 import ModelViewer from '@/components/ModelViewer'
 import Link from 'next/link'
 import React from 'react'
-import QRCodeDisplay from '@/components/QRCodeDisplay'
+
 import { Icon } from '@/components/Icons'
 import { useCart } from '@/context/CartContext'
 import texts from '@/data/texts.json'
@@ -95,12 +95,6 @@ export default function ProductPage({ params }: ProductPageProps) {
           >
             {texts.product.addToCart}
           </button>
-          <div className="flex flex-col gap-2 mt-4">
-            <span className="text-sm text-gray-500 font-medium mb-1">{texts.product.scanAR}</span>
-            <div className="inline-block bg-white rounded-xl shadow p-3 border border-gray-100 w-fit">
-              <QRCodeDisplay value={`/ar/${chair.id}`} size={80} />
-            </div>
-          </div>
         </div>
       </div>
     </section>

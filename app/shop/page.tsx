@@ -3,15 +3,10 @@ import ChairCard from '@/components/ChairCard'
 import React from 'react'
 import { Icon } from '@/components/Icons'
 import Link from 'next/link'
+import texts from '@/data/texts.json'
 
 interface SearchParams {
   category?: string
-}
-
-const categoryTitles: Record<string, string> = {
-  kitchen: 'Kitchen Chairs',
-  bedroom: 'Bedroom Chairs',
-  office: 'Office Chairs',
 }
 
 export default async function ShopAllPage({
@@ -22,7 +17,9 @@ export default async function ShopAllPage({
   const { category } = (await searchParams) ?? {}
 
   const filtered = category ? chairs.filter(c => c.category === category) : chairs
-  const title = category ? categoryTitles[category] || 'Chairs' : 'Shop All'
+  const title = category
+    ? texts.categoryTitles[category as keyof typeof texts.categoryTitles] || texts.pages.chairs
+    : texts.pages.shopAll
 
   return (
     <section className="w-full py-20 lg:px-8">
@@ -33,7 +30,7 @@ export default async function ShopAllPage({
           className="inline-flex items-center gap-2 text-sm px-4 w-fit py-2 rounded-full border border-black/20 bg-white shadow hover:bg-black hover:text-white transition cursor-pointer whitespace-nowrap"
         >
           <Icon name="arrow" size={18} className="-rotate-180" />
-          Back to home
+          {texts.pages.backToHome}
         </Link>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">

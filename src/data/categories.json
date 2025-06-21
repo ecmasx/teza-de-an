@@ -1,5 +1,5 @@
 [
-  { "id": 1, "name": "Kitchen", "slug": "kitchen", "image": "/images/kitchen.jpg" },
-  { "id": 2, "name": "Bedroom", "slug": "bedroom", "image": "/images/bedroom.jpg" },
-  { "id": 3, "name": "Office", "slug": "office", "image": "/images/office.jpg" }
+  { "id": 1, "name": "Bucătărie", "slug": "kitchen", "image": "/images/kitchen.jpg" },
+  { "id": 2, "name": "Dormitor", "slug": "bedroom", "image": "/images/bedroom.jpg" },
+  { "id": 3, "name": "Birou", "slug": "office", "image": "/images/office.jpg" }
 ]

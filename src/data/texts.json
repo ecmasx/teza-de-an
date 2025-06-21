@@ -1,127 +1,317 @@
 {
   "navigation": {
-    "shop": "Shop",
-    "categories": "Categories",
-    "about": "About",
+    "shop": "Magazin",
+    "categories": "Categorii",
+    "about": "Despre noi",
     "contact": "Contact",
-    "faqs": "FAQs",
-    "returns": "Returns Portal",
-    "shipping": "Shipping",
-    "terms": "Terms of Use",
-    "privacy": "Privacy Policy"
+    "faqs": "Întrebări frecvente",
+    "returns": "Portal returnări",
+    "shipping": "Livrare",
+    "terms": "Termeni de utilizare",
+    "privacy": "Politica de confidențialitate"
   },
   "hero": {
-    "badge": "New Collection 2025",
-    "title": "Furniture that fits your life.",
-    "subtitle": "Try every chair in AR. Real-world previews. Zero guesswork.",
-    "cta": "Explore Now"
+    "badge": "Noua colecție 2025",
+    "title": "Mobilă care se potrivește vieții tale.",
+    "subtitle": "Testează fiecare scaun în AR. Previzualizare reală. Fără incertitudini.",
+    "cta": "Explorează acum"
   },
   "sections": {
-    "bestSellers": "Best Sellers",
-    "tryInAR": "Try it in AR",
-    "byCategory": "By Category",
-    "shopAll": "Shop all"
+    "bestSellers": "Cele mai vândute",
+    "tryInAR": "Testează în AR",
+    "byCategory": "După categorie",
+    "shopAll": "Vezi toate"
   },
   "tryInAR": {
-    "description": "Preview every chair directly in your space. Scan the QR code or open a product on your phone and tap the AR icon."
+    "description": "Previzualizează fiecare scaun direct în spațiul tău. Deschide un produs pe telefon și apasă pe icona AR."
   },
   "cart": {
-    "title": "Your Cart",
-    "empty": "Cart is empty",
-    "addToCart": "Add to Cart",
-    "removeFromCart": "Remove from Cart",
+    "title": "Coșul tău",
+    "empty": "Coșul este gol",
+    "addToCart": "Adaugă în coș",
+    "removeFromCart": "Elimină din coș",
     "total": "Total"
   },
   "search": {
-    "placeholder": "Search...",
-    "placeholderMobile": "Search chairs...",
-    "noResults": "No results"
+    "placeholder": "Caută...",
+    "placeholderMobile": "Caută scaune...",
+    "noResults": "Niciun rezultat"
   },
   "footer": {
-    "signupTitle": "Sign up and save 10%",
-    "signupButton": "Sign up",
+    "signupTitle": "Înscrie-te și economisește 10%",
+    "signupButton": "Înscrie-te",
     "companyName": "Stula",
-    "ordersSupport": "Orders and Support",
-    "termsConditions": "Terms and Conditions",
-    "followUs": "Follow us",
-    "promoTitle": "Your Promo Code",
-    "promoDescription": "Use this code at checkout to save 10% on your first purchase!",
-    "copyToClipboard": "Copy to clipboard"
+    "ordersSupport": "Comenzi și suport",
+    "termsConditions": "Termeni și condiții",
+    "followUs": "Urmărește-ne",
+    "promoTitle": "Codul tău promoțional",
+    "promoDescription": "Folosește acest cod la checkout pentru a economisi 10% la prima achiziție!",
+    "copyToClipboard": "Copiază în clipboard"
   },
   "forms": {
-    "emailPlaceholder": "Enter email address",
-    "namePlaceholder": "Name",
-    "helpPlaceholder": "How can we help you?"
+    "emailPlaceholder": "Introdu adresa de email",
+    "namePlaceholder": "Numele",
+    "helpPlaceholder": "Cum te putem ajuta?"
   },
   "ariaLabels": {
-    "openMenu": "Open menu",
-    "closeMenu": "Close menu",
-    "search": "Search",
-    "cart": "Cart",
-    "closeCart": "Close cart",
-    "closeSearch": "Close search",
-    "decrease": "Decrease",
-    "increase": "Increase",
-    "decreaseQuantity": "Decrease quantity",
-    "increaseQuantity": "Increase quantity",
-    "copyToClipboard": "Copy to clipboard",
+    "openMenu": "Deschide meniul",
+    "closeMenu": "Închide meniul",
+    "search": "Caută",
+    "cart": "Coș",
+    "closeCart": "Închide coșul",
+    "closeSearch": "Închide căutarea",
+    "decrease": "Scade",
+    "increase": "Crește",
+    "decreaseQuantity": "Scade cantitatea",
+    "increaseQuantity": "Crește cantitatea",
+    "copyToClipboard": "Copiază în clipboard",
     "instagram": "Instagram",
     "logo": "logo",
-    "previousSlide": "Previous slide",
-    "nextSlide": "Next slide"
+    "previousSlide": "Diapozitivul anterior",
+    "nextSlide": "Următorul diapozitiv"
   },
   "altTexts": {
     "logo": "logo",
-    "phoneAR": "Phone showing chair in AR"
+    "phoneAR": "Telefon care arată scaunul în AR"
   },
   "about": {
-    "title": "About Stula",
-    "description": "Stula is a modern furniture brand from Moldova, focused on blending timeless design with innovative technology. We believe that furniture should not only look great, but also fit perfectly into your life and space.",
+    "title": "Despre Stula",
+    "description": "Stula este o marcă modernă de mobilă din Moldova, concentrată pe îmbinarea designului atemporal cu tehnologia inovatoare. Credem că mobila nu doar să arate grozav, ci să se potrivească perfect în viața și spațiul tău.",
     "mission": {
-      "title": "Our Mission",
-      "text": "To make high-quality, stylish furniture accessible and easy to visualize in your home using real-world AR previews. We remove the guesswork from furniture shopping."
+      "title": "Misiunea noastră",
+      "text": "Să facem mobila de înaltă calitate și stilată accesibilă și ușor de vizualizat în casa ta folosind previzualizări AR reale. Eliminăm incertitudinea din cumpărarea de mobilă."
     },
     "whyChoose": {
-      "title": "Why Choose Us?",
+      "title": "De ce să ne alegi?",
       "items": [
-        "Modern, minimalist designs",
-        "Preview every product in AR before you buy",
-        "Fast and reliable shipping across Moldova",
-        "Dedicated customer support",
-        "Eco-friendly materials and production"
+        "Designuri moderne și minimaliste",
+        "Previzualizează fiecare produs în AR înainte să cumperi",
+        "Livrare rapidă și de încredere în toată Moldova",
+        "Suport dedicat pentru clienți",
+        "Materiale și producție eco-friendly"
       ]
     }
   },
   "categories": {
-    "shopPrefix": "Shop"
+    "shopPrefix": "Cumpără"
   },
   "contact": {
-    "title": "Contact Us",
-    "description": "Have a question or need help? Fill out the form below or reach us directly:",
+    "title": "Contactează-ne",
+    "description": "Ai o întrebare sau ai nevoie de ajutor? Completează formularul de mai jos sau contactează-ne direct:",
     "email": "Email:",
-    "phone": "Phone:",
-    "address": "Address:",
-    "addressValue": "Chisinau, Moldova",
+    "phone": "Telefon:",
+    "address": "Adresa:",
+    "addressValue": "Chișinău, Moldova",
     "emailValue": "support@stula.com",
     "phoneValue": "+373 60 123 456",
-    "yourName": "Your Name",
-    "yourEmail": "Your Email",
-    "message": "Message",
-    "sendMessage": "Send Message",
-    "sending": "Sending...",
-    "successMessage": "Thank you! Your message has been sent.",
-    "errorMessage": "Error: Please fill in all fields."
+    "yourName": "Numele tău",
+    "yourEmail": "Email-ul tău",
+    "message": "Mesajul",
+    "sendMessage": "Trimite mesajul",
+    "sending": "Se trimite...",
+    "successMessage": "Mulțumim! Mesajul tău a fost trimis.",
+    "errorMessage": "Eroare: Te rugăm completează toate câmpurile."
   },
   "product": {
-    "backToShop": "Back to shop",
-    "addToCart": "Add to Cart",
-    "scanAR": "Scan to preview in AR:"
+    "backToShop": "Înapoi la magazin",
+    "addToCart": "Adaugă în coș"
   },
   "chairCard": {
-    "arPreview": "AR Preview",
-    "view": "View"
+    "arPreview": "Previzualizare AR",
+    "view": "Vezi"
   },
   "common": {
-    "currency": "mdl"
+    "currency": "lei"
+  },
+  "chatbot": {
+    "greeting": "Bună! Sunt asistentul virtual STULA. Cum te pot ajuta să găsești scaunul perfect?",
+    "placeholderMessage": "Scrie mesajul tău...",
+    "buttonTooltip": "Întreabă-mă despre scaune!",
+    "buttonTooltipSubtitle": "Asistent AI pentru STULA",
+    "title": "🤖 Asistent STULA",
+    "subtitle": "Ghidul tău inteligent pentru mobiliarul perfect",
+    "welcomeTitle": "Bună! 👋",
+    "welcomeMessage": "Sunt aici să te ajut să găsești scaunul perfect pentru casa ta.",
+    "askAbout": "Întreabă-mă despre:",
+    "categories": [
+      "Scaune pentru bucătărie, birou sau dormitor",
+      "Recomandări pe buget și stil",
+      "Cum să folosești funcția AR"
+    ],
+    "suggestedQuestions": [
+      "Ce scaune recomandați pentru bucătărie?",
+      "Căut un scaun de birou confortabil",
+      "Care este cel mai ieftin scaun?"
+    ],
+    "loadingMessage": "Asistentul scrie...",
+    "recommendedProducts": "Produse recomandate:",
+    "errorMessage": "Îmi pare rău, a apărut o eroare. Te rog încearcă din nou."
+  },
+  "pages": {
+    "underConstruction": "Această pagină este în construcție. Revino în curând!",
+    "shopAll": "Vezi toate",
+    "backToHome": "Înapoi la pagina principală",
+    "chairs": "Scaune",
+    "allChairs": "Toate scaunele"
+  },
+  "categoryTitles": {
+    "kitchen": "Scaune bucătărie",
+    "bedroom": "Scaune dormitor",
+    "office": "Scaune birou"
+  },
+  "ar": {
+    "loadingText": "Se încarcă modelul AR...",
+    "launchAR": "Lansează AR",
+    "autoLaunchMessage": "Modelul se va lansa automat în AR în câteva secunde",
+    "desktopMessage": "Pentru a vizualiza în AR, deschide această pagină pe telefon"
+  },
+  "privacyPolicy": {
+    "title": "Politica de confidențialitate",
+    "description": "Prețuim confidențialitatea ta. Această pagină explică cum colectăm, folosim și protejăm informațiile tale personale când folosești site-ul nostru.",
+    "infoWeCollect": {
+      "title": "Informațiile pe care le colectăm",
+      "items": [
+        "Informații personale pe care le furnizezi (nume, email, etc.)",
+        "Detaliile comenzii și plății",
+        "Date de utilizare (cookies, analiză, etc.)"
+      ]
+    },
+    "howWeUse": {
+      "title": "Cum folosim informațiile tale",
+      "items": [
+        "Pentru a procesa comenzile și a oferi suport clienților",
+        "Pentru a îmbunătăți site-ul și serviciile noastre",
+        "Pentru a trimite actualizări și marketing (cu consimțământul tău)"
+      ]
+    },
+    "yourRights": {
+      "title": "Drepturile tale",
+      "items": [
+        "Accesarea, actualizarea sau ștergerea datelor tale",
+        "Renunțarea la comunicările de marketing",
+        "Contactarea noastră pentru orice preocupări legate de confidențialitate"
+      ]
+    },
+    "footer": "Pentru mai multe detalii, contactează-ne la support@stula.com."
+  },
+  "returnsPolicy": {
+    "title": "Politica de returnare",
+    "description": "Vrem să fii mulțumit de achiziția ta! Dacă nu ești satisfăcut, poți returna majoritatea articolelor în termen de 30 de zile de la livrare.",
+    "howToReturn": {
+      "title": "Cum să returnezi",
+      "items": [
+        "Contactează echipa noastră de suport pentru a iniția o returnare.",
+        "Articolele trebuie să fie nefolosite și în ambalajul original.",
+        "Costurile de transport pentru returnare sunt responsabilitatea clientului, cu excepția cazului în care articolul este defect."
+      ]
+    },
+    "refunds": {
+      "title": "Rambursări",
+      "items": [
+        "Rambursările sunt procesate în termen de 7 zile lucrătoare după ce primim returnarea ta.",
+        "Taxele de transport originale nu sunt rambursabile."
+      ]
+    },
+    "footer": "Pentru mai multe detalii sau pentru a începe o returnare, contactează-ne la support@stula.com."
+  },
+  "shippingPolicy": {
+    "title": "Politica de livrare",
+    "description": "Oferim livrare rapidă și de încredere în toată Moldova. Te rugăm să consulți politica noastră de livrare de mai jos.",
+    "deliveryTimes": {
+      "title": "Timpi de livrare",
+      "items": [
+        "Livrare standard: 2-5 zile lucrătoare",
+        "Livrare express: 1-2 zile lucrătoare (se aplică taxă suplimentară)",
+        "Timpii de livrare pot varia în perioada sărbătorilor sau reducerilor"
+      ]
+    },
+    "shippingCosts": {
+      "title": "Costuri de livrare",
+      "items": [
+        "Livrare gratuită pentru comenzi de peste 999 lei",
+        "Comenzi sub 999 lei: 50 lei tarif fix"
+      ]
+    },
+    "tracking": {
+      "title": "Urmărirea comenzii",
+      "items": [
+        "Vei primi un număr de urmărire prin email odată ce comanda ta este expediată",
+        "Contactează suportul dacă nu ai primit informațiile de urmărire"
+      ]
+    },
+    "footer": "Întrebări? Trimite-ne un email la support@stula.com."
+  },
+  "termsOfUse": {
+    "title": "Termeni de utilizare",
+    "description": "Prin utilizarea site-ului nostru, ești de acord cu următorii termeni și condiții. Te rugăm să îi citești cu atenție.",
+    "general": {
+      "title": "General",
+      "items": [
+        "Tot conținutul este doar în scop informativ.",
+        "Ne rezervăm dreptul de a actualiza acești termeni oricând.",
+        "Utilizarea site-ului nostru este pe propriul risc."
+      ]
+    },
+    "ordersPayments": {
+      "title": "Comenzi și plăți",
+      "items": [
+        "Toate comenzile sunt supuse acceptării și disponibilității.",
+        "Prețurile și detaliile produselor se pot schimba fără preaviz.",
+        "Plata trebuie făcută integral înainte de expediere."
+      ]
+    },
+    "liability": {
+      "title": "Limitarea răspunderii",
+      "items": [
+        "Nu suntem răspunzători pentru daune indirecte sau consecutive.",
+        "Răspunderea noastră este limitată la valoarea comenzii tale."
+      ]
+    },
+    "footer": "Dacă ai întrebări despre acești termeni, contactează-ne la support@stula.com."
+  },
+  "faqs": {
+    "title": "Întrebări frecvente",
+    "items": [
+      {
+        "question": "Din ce materiale sunt făcute scaunele voastre?",
+        "answer": "Scaunele noastre sunt realizate din lemn de înaltă calitate, metal și țesături eco-friendly pentru a asigura durabilitate și confort."
+      },
+      {
+        "question": "Oferiți livrare internațională?",
+        "answer": "În prezent, livrăm doar în Moldova. Rămâi la curent pentru actualizări despre livrarea internațională!"
+      },
+      {
+        "question": "Pot previzualiza scaunul în camera mea înainte să-l cumpăr?",
+        "answer": "Da! Folosește funcția noastră AR pe telefon pentru a previzualiza orice scaun în spațiul tău."
+      },
+      {
+        "question": "Care este politica voastră de returnare?",
+        "answer": "Poți returna orice produs în termen de 30 de zile de la livrare. Te rugăm să vizitezi Portalul de returnări pentru mai multe detalii."
+      },
+      {
+        "question": "Cum îmi îngrijesc mobila?",
+        "answer": "Recomandăm curățarea regulată cu o cârpă uscată și folosirea unei cârpe umede pentru curățare. Evită produsele chimice agresive."
+      },
+      {
+        "question": "Scaunele sunt asamblate la livrare?",
+        "answer": "Majoritatea scaunelor vin pre-asamblate. Pentru unele modele, este necesară o asamblare minimă și sunt incluse instrucțiunile."
+      },
+      {
+        "question": "Pot urmări comanda mea?",
+        "answer": "Da, după ce comanda ta este expediată, vei primi un număr de urmărire prin email."
+      },
+      {
+        "question": "Oferiți reduceri pentru comenzi în cantități mari?",
+        "answer": "Da, oferim reduceri pentru comenzi în cantități mari și pentru afaceri. Te rugăm să ne contactezi pentru o ofertă personalizată."
+      },
+      {
+        "question": "Cum pot contacta suportul?",
+        "answer": "Poți contacta echipa noastră de suport prin pagina de Contact sau trimițând un email la support@stula.com."
+      },
+      {
+        "question": "Există o garanție pentru produsele voastre?",
+        "answer": "Toate produsele noastre vin cu o garanție de 2 ani care acoperă defectele de fabricație."
+      }
+    ]
   }
 }

@@ -1,29 +1,22 @@
 # 🪑 Stula
 
-Proiect de diplomă — magazin online de mobilier (scaune sau mese) cu vizualizare în realitate augmentată (AR) și cod QR pentru acces mobil.
-
-## 📌 Descriere
-
-Această aplicație permite utilizatorilor:
-
-- să exploreze modele de scaune sau mese
-- să selecteze culoarea preferată
-- să vizualizeze produsul în **realitate augmentată** (AR) direct de pe telefon
-- să scaneze un **cod QR** de pe desktop pentru a deschide modelul în AR pe telefon
+Proiect de diplomă — magazin online de mobilier (scaune sau mese) cu vizualizare în realitate augmentată (AR).
 
 Tehnologii folosite:
 
 - [Next.js](https://nextjs.org) — framework React pentru web apps
 - [Tailwind CSS](https://tailwindcss.com) — utilitar CSS pentru design rapid și responsiv
 - [model-viewer](https://modelviewer.dev) — vizualizator 3D și AR
-- [QRCode.react](https://www.npmjs.com/package/qrcode.react) — generare coduri QR
-- TypeScript — tipare stricte și claritate în cod
+- [TypeScript](https://www.typescriptlang.org) — tipare stricte și claritate în cod
+- [OpenAI GPT-4.1-mini](https://openai.com) — chatbot inteligent pentru recomandări produse
+- [Vercel](https://vercel.com) — hosting și deploy
+- [Swiper](https://swiperjs.com) — slider pentru galerie de imagini
 
 ## 📁 Structură fișiere
 
 ```bash
 ar-furniture-store/
-├── components/          # Componente UI (carduri produse, QR, viewer AR)
+├── components/          # Componente UI (carduri produse, viewer AR)
 ├── lib/data.ts          # Listă mock de produse
 ├── pages/
 │   ├── index.tsx        # Pagina principală (catalog produse)
@@ -49,7 +42,16 @@ cd ar-furniture-store
 npm install
 ```
 
-3. Rulează aplicația în modul dezvoltare:
+3. Configurează variabila de mediu pentru chatbot:
+
+```bash
+cp .env.example .env.local
+# Editează .env.local și adaugă cheia ta OpenAI API
+```
+
+Pentru a obține o cheie OpenAI API: [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)
+
+4. Rulează aplicația în modul dezvoltare:
 
 ```bash
 npm run dev
@@ -57,20 +59,24 @@ npm run dev
 
 Accesează [http://localhost:3000](http://localhost:3000)
 
-## 🎯 Funcționalități
-
-- ✅ Catalog produse cu imagini
-- ✅ Pagină detaliu produs
-- ✅ Selectare culoare (în viitor)
-- ✅ Generare cod QR pentru AR (desktop)
-- ✅ Vizualizare produs în AR (mobil)
-
 ## 📱 AR — Realitate Augmentată
 
-Se folosește `<model-viewer>` pentru a încărca modele `.glb`. Pe telefoane compatibile, utilizatorul poate vedea produsul în spațiul real prin camera telefonului.
+Se folosește `<model-viewer>` pentru a încărca modele `.glb` și `.usdz`. Pe telefoane compatibile, utilizatorul poate vedea produsul în spațiul real prin camera telefonului.
 
 - Android: Scene Viewer
 - iOS: Quick Look
+
+## 🤖 Chatbot Inteligent
+
+Aplicația include un chatbot alimentat de GPT-4o-mini care:
+
+- Recomandă produse bazate pe nevoile clientului (cameră, buget, stil)
+- Oferă link-uri directe către produsele sugerate
+- Explică funcția AR și cum să o folosești
+- Răspunde în română și înțelege contextul magazinului STULA
+- Apare ca un buton flotant în colțul din dreapta jos
+
+Chatbot-ul cunoaște toate produsele din catalog și poate face recomandări personalizate.
 
 ## 🧠 Viitoare îmbunătățiri
 
