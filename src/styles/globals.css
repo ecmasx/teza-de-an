@@ -25,6 +25,7 @@ html {
 .best-sellers-swiper {
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-bottom: 2rem;
 }
 
 .best-sellers-swiper .swiper-scrollbar.swiper-scrollbar-horizontal {
@@ -43,4 +44,12 @@ html {
 
 .best-sellers-swiper .swiper-scrollbar-drag:active {
   cursor: grabbing;
+}
+
+.no-swipe {
+  touch-action: none;
+}
+
+.no-swipe * {
+  pointer-events: auto;
 }

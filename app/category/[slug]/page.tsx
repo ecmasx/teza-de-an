@@ -30,7 +30,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           All chairs
         </Link>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3ц">
         {filtered.map(chair => (
           <ChairCard key={chair.id} chair={chair} />
         ))}

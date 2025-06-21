@@ -7,6 +7,7 @@ import chairs from '@/data/chairs'
 import NavLink from '@/components/NavLink'
 import { useCart } from '@/context/CartContext'
 import ModelViewer from '@/components/ModelViewer'
+import texts from '@/data/texts.json'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -51,7 +52,7 @@ export default function Header() {
     <header className="w-full flex items-center justify-between px-8 py-3 bg-white sticky top-10 z-50 border-b border-black/40">
       <div className="flex items-center gap-4">
         <button
-          aria-label="Open menu"
+          aria-label={texts.ariaLabels.openMenu}
           className="p-2 cursor-pointer block lg:hidden"
           onClick={() => setMenuOpen(true)}
         >
@@ -59,22 +60,22 @@ export default function Header() {
         </button>
         <nav className="hidden lg:flex gap-6">
           <NavLink href="/shop" className="font-normal">
-            Shop
+            {texts.navigation.shop}
           </NavLink>
           <NavLink href="/categories" className="font-normal">
-            Categories
+            {texts.navigation.categories}
           </NavLink>
         </nav>
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
         <Link href="/" className="text-2xl font-light tracking-wide">
-          <Image src="/images/logo.png" alt="logo" width={96} height={96} />
+          <Image src="/images/logo.png" alt={texts.altTexts.logo} width={96} height={96} />
         </Link>
       </div>
       <div className="flex items-center gap-4">
         <div className="relative" ref={searchRef}>
           <button
-            aria-label="Search"
+            aria-label={texts.ariaLabels.search}
             className="p-2 cursor-pointer"
             onClick={() => setSearchOpen(prev => !prev)}
           >
@@ -84,7 +85,7 @@ export default function Header() {
             type="text"
             value={query}
             onChange={e => setQuery(e.target.value)}
-            placeholder="Search..."
+            placeholder={texts.search.placeholder}
             className={`hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 border-b border-black py-1 pl-2 focus:outline-none bg-transparent transition-all duration-300 ${
               searchOpen ? 'w-40 xl:w-80 opacity-100' : 'w-0 opacity-0 pointer-events-none'
             }`}
@@ -106,17 +107,19 @@ export default function Header() {
                       }}
                     >
                       <span>{c.name}</span>
-                      <span className="text-sm">{c.price} mdl</span>
+                      <span className="text-sm">
+                        {c.price} {texts.common.currency}
+                      </span>
                     </Link>
                   </li>
                 ))}
               {chairs.filter(c => c.name.toLowerCase().includes(query.toLowerCase())).length ===
-                0 && <li className="py-4 text-center text-gray-500">No results</li>}
+                0 && <li className="py-4 text-center text-gray-500">{texts.search.noResults}</li>}
             </ul>
           )}
         </div>
         <button
-          aria-label="Cart"
+          aria-label={texts.ariaLabels.cart}
           className={`p-2 cursor-pointer transition-transform duration-300 ${
             cartOpen ? 'scale-90' : ''
           }`}
@@ -138,7 +141,7 @@ export default function Header() {
         }`}
       >
         <button
-          aria-label="Close menu"
+          aria-label={texts.ariaLabels.closeMenu}
           className="self-end mb-4 p-2 rounded-full hover:bg-gray-100 transition-transform duration-200 hover:rotate-90"
           onClick={() => setMenuOpen(false)}
         >
@@ -150,14 +153,14 @@ export default function Header() {
             className="text-lg font-semibold tracking-wide hover:text-yellow-500 transition"
             onClick={() => setMenuOpen(false)}
           >
-            Shop
+            {texts.navigation.shop}
           </NavLink>
           <NavLink
             href="/categories"
             className="text-lg font-semibold tracking-wide hover:text-yellow-500 transition"
             onClick={() => setMenuOpen(false)}
           >
-            Categories
+            {texts.navigation.categories}
           </NavLink>
         </nav>
         <div className="mt-auto flex flex-col items-center gap-2 pb-8">
@@ -167,7 +170,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-700 hover:text-pink-500 transition-colors"
-            aria-label="Instagram"
+            aria-label={texts.ariaLabels.instagram}
           >
             <Icon name="instagram" size={28} />
           </a>
@@ -181,80 +184,80 @@ export default function Header() {
         onClick={closeCart}
       />
       <div
-        className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-white rounded-l-3xl shadow-2xl z-50 flex flex-col pt-8 px-8 gap-6 transform transition-transform duration-300 ease-in-out cart-drawer ${
+        className={`fixed top-0 right-0 h-full w-full md:max-w-md max-w-xs bg-white rounded-l-3xl shadow-2xl z-50 flex flex-col pt-8 px-8 gap-6 transform transition-transform duration-300 ease-in-out cart-drawer ${
           cartOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <button
-          aria-label="Close cart"
+          aria-label={texts.ariaLabels.closeCart}
           className="self-end mb-4 p-2 rounded-full hover:bg-gray-100 transition-transform duration-200 hover:rotate-90"
           onClick={closeCart}
         >
           <Icon name="close" size={28} />
         </button>
-        <h2 className="text-xl font-semibold">Your Cart</h2>
+        <h2 className="text-xl font-semibold">{texts.cart.title}</h2>
         <div className="flex-1 flex flex-col items-center justify-center text-gray-500 w-full">
           {cart.length === 0 ? (
-            <div>Cart is empty</div>
+            <div>{texts.cart.empty}</div>
           ) : (
-            <div className="w-full flex flex-col justify-between h-full gap-4">
-              {cart.map(item => {
-                const chair = chairs.find(c => c.id === item.id)
-                if (!chair) return null
-                return (
-                  <div key={item.id} className="flex items-center gap-4 py-2">
-                    <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden border">
-                      <ModelViewer
-                        src={chair.src}
-                        auto-rotate
-                        className="w-full h-full object-contain"
-                      />
+            <>
+              <div className="w-full flex flex-col justify-start h-full gap-4">
+                {cart.map(item => {
+                  const chair = chairs.find(c => c.id === item.id)
+                  if (!chair) return null
+                  return (
+                    <div key={item.id} className="flex items-center gap-4 py-2">
+                      <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden border">
+                        <ModelViewer
+                          src={chair.src}
+                          auto-rotate
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <div className="flex-1 flex flex-col">
+                        <span className="font-medium text-gray-900">{chair.name}</span>
+                        <span className="text-sm text-yellow-500">{chair.price} mdl</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <button
+                          aria-label="Decrease quantity"
+                          className="p-1 text-black hover:text-red-500 transition-colors"
+                          onClick={() => {
+                            if (item.quantity > 1) {
+                              decreaseItem(item.id)
+                            } else {
+                              removeFromCart(item.id)
+                            }
+                          }}
+                        >
+                          <Icon name="minus" className="hover:cursor-pointer" size={24} />
+                        </button>
+                        <span className="text-sm font-semibold">{item.quantity}</span>
+                        <button
+                          aria-label="Increase quantity"
+                          className="p-1 text-black hover:text-green-600 transition-colors"
+                          onClick={() => addToCart(item.id, 1)}
+                        >
+                          <Icon name="plus" className="hover:cursor-pointer" size={24} />
+                        </button>
+                      </div>
                     </div>
-                    <div className="flex-1 flex flex-col">
-                      <span className="font-medium text-gray-900">{chair.name}</span>
-                      <span className="text-sm text-yellow-500">{chair.price} mdl</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <button
-                        aria-label="Decrease quantity"
-                        className="p-1 text-black hover:text-red-500 transition-colors"
-                        onClick={() => {
-                          if (item.quantity > 1) {
-                            decreaseItem(item.id)
-                          } else {
-                            removeFromCart(item.id)
-                          }
-                        }}
-                      >
-                        <Icon name="minus" className="hover:cursor-pointer" size={24} />
-                      </button>
-                      <span className="text-sm font-semibold">{item.quantity}</span>
-                      <button
-                        aria-label="Increase quantity"
-                        className="p-1 text-black hover:text-green-600 transition-colors"
-                        onClick={() => addToCart(item.id, 1)}
-                      >
-                        <Icon name="plus" className="hover:cursor-pointer" size={24} />
-                      </button>
-                    </div>
-                  </div>
-                )
-              })}
-
-              <div className="mt-4 text-right border-t border-black py-2">
-                <span className="text-lg text-black font-semibold">
-                  Total:{' '}
-                  {cart.reduce((sum, item) => {
-                    const chair = chairs.find(c => c.id === item.id)
-                    return sum + (chair ? chair.price * item.quantity : 0)
-                  }, 0)}{' '}
-                  mdl
-                </span>
+                  )
+                })}
               </div>
-            </div>
+            </>
           )}
         </div>
-
+        <div className="mt-4 text-right border-t border-black py-2">
+          <span className="text-lg text-black font-semibold">
+            Total:{' '}
+            {cart.reduce((sum, item) => {
+              const chair = chairs.find(c => c.id === item.id)
+              return sum + (chair ? chair.price * item.quantity : 0)
+            }, 0)}{' '}
+            mdl
+          </span>
+        </div>
         <button className="mt-auto mb-8 w-full bg-black text-white py-3 rounded-full font-medium hover:cursor-pointer hover:bg-white hover:text-black border border-black transition-colors">
           Checkout
         </button>

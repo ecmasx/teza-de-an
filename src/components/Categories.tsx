@@ -4,17 +4,18 @@ import categories from '@/data/categories.json'
 import NavLink from '@/components/NavLink'
 import Link from 'next/link'
 import { Icon } from './Icons'
+import texts from '@/data/texts.json'
 
 export default function Categories() {
   return (
     <section className="w-full py-16 px-4 lg:px-8">
       <div className="flex items-center justify-between mb-8">
-        <h2 className="text-3xl lg:text-4xl font-semibold">By Category</h2>
+        <h2 className="text-3xl lg:text-4xl font-semibold">{texts.sections.byCategory}</h2>
         <NavLink
           href="/shop"
           className="inline-flex items-center gap-2 text-sm px-4 w-fit py-2 rounded-full border border-black/20 bg-white shadow hover:bg-black hover:text-white transition cursor-pointer whitespace-nowrap !no-underline hover:!no-underline focus:!no-underline"
         >
-          Shop all
+          {texts.sections.shopAll}
           <Icon name="arrow" size={18} className="rotate-180" />
         </NavLink>
       </div>
@@ -36,7 +37,7 @@ export default function Categories() {
             <div className="absolute inset-0 flex flex-col justify-between p-4 text-white">
               <h3 className="text-lg font-semibold">{cat.name}</h3>
               <span className="inline-flex bg-white text-black w-fit items-center text-xs px-4 py-2 rounded-full font-medium transition-colors group-hover:bg-black group-hover:text-white">
-                Shop {cat.name}
+                {texts.categories.shopPrefix} {cat.name}
               </span>
             </div>
           </Link>

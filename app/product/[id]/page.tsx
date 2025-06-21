@@ -7,6 +7,7 @@ import React from 'react'
 import QRCodeDisplay from '@/components/QRCodeDisplay'
 import { Icon } from '@/components/Icons'
 import { useCart } from '@/context/CartContext'
+import texts from '@/data/texts.json'
 
 interface ProductPageProps {
   params: Promise<{ id: string }>
@@ -42,7 +43,7 @@ export default function ProductPage({ params }: ProductPageProps) {
         className="inline-flex items-center gap-2 text-sm mb-8 px-4 py-2 rounded-full border border-black/20 bg-white shadow hover:bg-black hover:text-white transition"
       >
         <Icon name="arrow" size={18} className="-rotate-180" />
-        Back to shop
+        {texts.product.backToShop}
       </Link>
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="w-full aspect-[3/4] bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-2xl shadow-xl border border-gray-200 flex items-center justify-center p-6">
@@ -57,13 +58,15 @@ export default function ProductPage({ params }: ProductPageProps) {
         <div className="flex flex-col gap-6">
           <h1 className="text-4xl font-extrabold text-gray-900 mb-2">{chair.name}</h1>
           <div className="flex items-center gap-4 mb-4">
-            <span className="text-2xl font-bold text-yellow-500">{chair.price} mdl</span>
+            <span className="text-2xl font-bold text-yellow-500">
+              {chair.price} {texts.common.currency}
+            </span>
           </div>
           <div className="flex items-center gap-4 w-full max-w-xs">
             <button
               className="w-10 h-10 rounded-full border border-black/20 bg-white text-2xl font-bold flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed hover:bg-black hover:text-white hover:cursor-pointer"
               onClick={() => setQty(qty > 1 ? qty - 1 : 1)}
-              aria-label="Decrease"
+              aria-label={texts.ariaLabels.decrease}
               disabled={qty <= 1}
             >
               –
@@ -78,7 +81,7 @@ export default function ProductPage({ params }: ProductPageProps) {
             <button
               className="w-10 h-10 rounded-full border border-black/20 bg-white text-2xl font-bold flex items-center justify-center hover:bg-black hover:text-white transition-all hover:cursor-pointer"
               onClick={() => setQty(qty + 1)}
-              aria-label="Increase"
+              aria-label={texts.ariaLabels.increase}
             >
               +
             </button>
@@ -90,10 +93,10 @@ export default function ProductPage({ params }: ProductPageProps) {
               openCart()
             }}
           >
-            Add to Cart
+            {texts.product.addToCart}
           </button>
           <div className="flex flex-col gap-2 mt-4">
-            <span className="text-sm text-gray-500 font-medium mb-1">Scan to preview in AR:</span>
+            <span className="text-sm text-gray-500 font-medium mb-1">{texts.product.scanAR}</span>
             <div className="inline-block bg-white rounded-xl shadow p-3 border border-gray-100 w-fit">
               <QRCodeDisplay value={`/ar/${chair.id}`} size={80} />
             </div>

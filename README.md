@@ -74,10 +74,8 @@ Se folosește `<model-viewer>` pentru a încărca modele `.glb`. Pe telefoane co
 
 ## 🧠 Viitoare îmbunătățiri
 
-- Integrare CMS (ex: Shopify Headless sau Sanity)
-- Căutare și filtrare produse
+- Integrare Shopify Headless
 - Selectare interactivă de culori și materiale
-- Adăugare coș de cumpărături și checkout
 
 ## 👨‍🎓 Autor
 

@@ -1,0 +1,127 @@
+{
+  "navigation": {
+    "shop": "Shop",
+    "categories": "Categories",
+    "about": "About",
+    "contact": "Contact",
+    "faqs": "FAQs",
+    "returns": "Returns Portal",
+    "shipping": "Shipping",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy"
+  },
+  "hero": {
+    "badge": "New Collection 2025",
+    "title": "Furniture that fits your life.",
+    "subtitle": "Try every chair in AR. Real-world previews. Zero guesswork.",
+    "cta": "Explore Now"
+  },
+  "sections": {
+    "bestSellers": "Best Sellers",
+    "tryInAR": "Try it in AR",
+    "byCategory": "By Category",
+    "shopAll": "Shop all"
+  },
+  "tryInAR": {
+    "description": "Preview every chair directly in your space. Scan the QR code or open a product on your phone and tap the AR icon."
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Cart is empty",
+    "addToCart": "Add to Cart",
+    "removeFromCart": "Remove from Cart",
+    "total": "Total"
+  },
+  "search": {
+    "placeholder": "Search...",
+    "placeholderMobile": "Search chairs...",
+    "noResults": "No results"
+  },
+  "footer": {
+    "signupTitle": "Sign up and save 10%",
+    "signupButton": "Sign up",
+    "companyName": "Stula",
+    "ordersSupport": "Orders and Support",
+    "termsConditions": "Terms and Conditions",
+    "followUs": "Follow us",
+    "promoTitle": "Your Promo Code",
+    "promoDescription": "Use this code at checkout to save 10% on your first purchase!",
+    "copyToClipboard": "Copy to clipboard"
+  },
+  "forms": {
+    "emailPlaceholder": "Enter email address",
+    "namePlaceholder": "Name",
+    "helpPlaceholder": "How can we help you?"
+  },
+  "ariaLabels": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "search": "Search",
+    "cart": "Cart",
+    "closeCart": "Close cart",
+    "closeSearch": "Close search",
+    "decrease": "Decrease",
+    "increase": "Increase",
+    "decreaseQuantity": "Decrease quantity",
+    "increaseQuantity": "Increase quantity",
+    "copyToClipboard": "Copy to clipboard",
+    "instagram": "Instagram",
+    "logo": "logo",
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide"
+  },
+  "altTexts": {
+    "logo": "logo",
+    "phoneAR": "Phone showing chair in AR"
+  },
+  "about": {
+    "title": "About Stula",
+    "description": "Stula is a modern furniture brand from Moldova, focused on blending timeless design with innovative technology. We believe that furniture should not only look great, but also fit perfectly into your life and space.",
+    "mission": {
+      "title": "Our Mission",
+      "text": "To make high-quality, stylish furniture accessible and easy to visualize in your home using real-world AR previews. We remove the guesswork from furniture shopping."
+    },
+    "whyChoose": {
+      "title": "Why Choose Us?",
+      "items": [
+        "Modern, minimalist designs",
+        "Preview every product in AR before you buy",
+        "Fast and reliable shipping across Moldova",
+        "Dedicated customer support",
+        "Eco-friendly materials and production"
+      ]
+    }
+  },
+  "categories": {
+    "shopPrefix": "Shop"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Have a question or need help? Fill out the form below or reach us directly:",
+    "email": "Email:",
+    "phone": "Phone:",
+    "address": "Address:",
+    "addressValue": "Chisinau, Moldova",
+    "emailValue": "support@stula.com",
+    "phoneValue": "+373 60 123 456",
+    "yourName": "Your Name",
+    "yourEmail": "Your Email",
+    "message": "Message",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "successMessage": "Thank you! Your message has been sent.",
+    "errorMessage": "Error: Please fill in all fields."
+  },
+  "product": {
+    "backToShop": "Back to shop",
+    "addToCart": "Add to Cart",
+    "scanAR": "Scan to preview in AR:"
+  },
+  "chairCard": {
+    "arPreview": "AR Preview",
+    "view": "View"
+  },
+  "common": {
+    "currency": "mdl"
+  }
+}
