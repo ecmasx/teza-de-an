@@ -95,7 +95,7 @@ export default function Chatbot() {
 
       {isOpen && (
         <div
-          className={`fixed bottom-0 left-0 right-0 md:bottom-8 md:right-8 md:inset-auto md:top-auto md:left-auto chatbot-mobile-height bg-white rounded-t-2xl md:rounded-2xl shadow-2xl border border-gray-100 flex flex-col z-50 overflow-hidden ${
+          className={`fixed bottom-0 left-0 right-0 md:bottom-8 md:right-8 md:inset-auto md:top-auto md:left-auto chatbot-container chatbot-mobile-height bg-white rounded-t-2xl md:rounded-2xl shadow-2xl border border-gray-100 flex flex-col z-50 overflow-hidden ${
             isClosing
               ? 'chatbot-slideDown md:chatbot-fadeOut'
               : 'chatbot-slideUp md:chatbot-fadeInUp'

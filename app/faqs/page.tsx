@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import texts from '@/data/texts.json'
+import { Icon } from '@/components/Icons'
 
 function AccordionItem({
   question,
@@ -32,21 +33,7 @@ function AccordionItem({
             isOpen ? 'rotate-180 border-black' : ''
           }`}
         >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6 8L10 12L14 8"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <Icon name="arrow-right" size={20} />
         </span>
       </button>
       <div

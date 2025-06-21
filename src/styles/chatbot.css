@@ -108,3 +108,10 @@
     transform: none;
   }
 }
+
+@media (min-width: 768px) {
+  .chatbot-container {
+    max-width: 480px;
+    max-height: 80vh;
+  }
+}
