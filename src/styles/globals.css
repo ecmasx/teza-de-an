@@ -1,12 +1,39 @@
 @import 'tailwindcss';
 @import './chatbot.css';
+
+/* Фиксированная высота вьюпорта для мобильных устройств */
+:root {
+  --vh: 1vh;
+  --app-height: 100vh;
+}
+
+/* Для поддержки новых CSS viewport units */
+html {
+  height: 100%;
+  height: 100vh;
+  height: 100dvh;
+}
+
 body {
   font-family: var(--font-switzer), Arial, sans-serif;
   background-color: #ffffff;
+  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: var(--app-height);
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* JavaScript будет устанавливать эту переменную */
+.full-height {
+  height: var(--app-height);
+}
+
+.min-full-height {
+  min-height: var(--app-height);
 }
 
 @keyframes marquee {

@@ -101,7 +101,7 @@ export default function AutoARViewer({ glbSrc, iosSrc, title = 'AR Model' }: Aut
 
   if (isLoading) {
     return (
-      <div className="w-screen h-screen bg-white flex items-center justify-center">
+      <div className="w-full min-h-[100dvh] bg-white flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-black mx-auto mb-4"></div>
           <p className="text-gray-600">{texts.ar.loadingText}</p>
@@ -113,7 +113,10 @@ export default function AutoARViewer({ glbSrc, iosSrc, title = 'AR Model' }: Aut
   const modelSrc = isIOS && iosSrc ? iosSrc : glbSrc
 
   return (
-    <div className="w-screen h-screen bg-white relative">
+    <div
+      className="w-full min-h-[100dvh] bg-white relative"
+      style={{ height: 'var(--app-height, 100vh)' }}
+    >
       <div ref={mvRef} className="w-full h-full">
         <ModelViewer
           src={modelSrc}

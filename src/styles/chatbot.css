@@ -95,7 +95,8 @@
   }
 
   .chatbot-mobile-height {
-    height: 80vh;
+    height: 80dvh;
+    height: calc(var(--app-height, 100vh) * 0.8);
   }
 }
 

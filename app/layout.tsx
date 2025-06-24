@@ -7,6 +7,7 @@ import Marquee from '@/components/Marquee'
 import Chatbot from '@/components/Chatbot'
 import { CartProvider } from '@/context/CartContext'
 import { ChatProvider } from '@/context/ChatContext'
+import ViewportInitializer from '@/components/ViewportInitializer'
 
 const switzer = localFont({
   src: [
@@ -42,6 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={switzer.variable}>
       <body>
+        <ViewportInitializer />
         <CartProvider>
           <ChatProvider>
             <Marquee />

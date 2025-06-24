@@ -7,7 +7,7 @@ import BlinkEffect from './BlinkEffect'
 export default function Hero() {
   return (
     <section
-      className="relative w-full min-h-[calc(100dvh-150px)] lg:min-h-[calc(100dvh-100px)] flex flex-col justify-end md:justify-center md:items-start rounded-2xl overflow-hidden my-6 shadow-xl"
+      className="relative w-full min-h-[80vh] min-h-[80dvh] lg:min-h-[85vh] lg:min-h-[85dvh] flex flex-col justify-end md:justify-center md:items-start rounded-2xl overflow-hidden my-6 shadow-xl"
       style={{
         backgroundImage: `url('/images/hero.png')`,
         backgroundSize: 'cover',
