@@ -146,8 +146,8 @@ export default function Chatbot() {
                             index === 0
                               ? 'bg-green-500'
                               : index === 1
-                              ? 'bg-blue-500'
-                              : 'bg-purple-500'
+                                ? 'bg-blue-500'
+                                : 'bg-purple-500'
                           }`}
                         ></span>
                         <span className="text-xs">{category}</span>
