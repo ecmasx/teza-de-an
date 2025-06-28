@@ -60,14 +60,14 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder={texts.forms.emailPlaceholder}
-                className="flex-1 px-3 py-2 text-lg focus:outline-none bg-transparent"
+                className="flex-1 px-4 py-3 text-base focus:outline-none bg-transparent min-h-[48px]"
                 value={email}
                 autoComplete="email"
                 onChange={e => setEmail(e.target.value)}
               />
               <button
                 type="submit"
-                className="px-3 py-3 bg-black text-white rounded-none font-normal border-l border-black/20 transition-all duration-200 hover:bg-white hover:cursor-pointer hover:text-black hover:border-black focus:outline-none focus:ring-2 focus:ring-black"
+                className="px-6 py-3 bg-black text-white rounded-none font-medium border-l border-black/20 transition-all duration-200 hover:bg-white hover:cursor-pointer hover:text-black hover:border-black focus:outline-none focus:ring-2 focus:ring-black min-h-[48px] whitespace-nowrap"
               >
                 {texts.footer.signupButton}
               </button>
