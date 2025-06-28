@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 
-export default function SuccessPage() {
+function SuccessContent() {
   const [sessionId, setSessionId] = useState<string | null>(null)
   const searchParams = useSearchParams()
 
@@ -15,7 +15,7 @@ export default function SuccessPage() {
     // Clear cart after successful payment
     if (session) {
       localStorage.removeItem('cart')
-      window.location.reload() // Simple way to reset cart context
+      // Instead of reload, we'll let the cart context handle the update
     }
   }, [searchParams])
 
@@ -66,5 +66,27 @@ export default function SuccessPage() {
         </div>
       </div>
     </section>
+  )
+}
+
+function LoadingFallback() {
+  return (
+    <section className="min-h-[60vh] flex flex-col items-center justify-center px-4 text-center">
+      <div className="max-w-md mx-auto">
+        <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+          <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
+        </div>
+        <div className="h-8 bg-gray-200 rounded mb-4 animate-pulse"></div>
+        <div className="h-4 bg-gray-200 rounded mb-8 animate-pulse"></div>
+      </div>
+    </section>
+  )
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <SuccessContent />
+    </Suspense>
   )
 }
