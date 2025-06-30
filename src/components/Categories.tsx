@@ -8,7 +8,7 @@ import texts from '@/data/texts.json'
 
 export default function Categories() {
   return (
-    <section className="w-full py-16 px-4 lg:px-8">
+    <section className="w-full py-16 px-4">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-3xl lg:text-4xl font-semibold">{texts.sections.byCategory}</h2>
         <NavLink

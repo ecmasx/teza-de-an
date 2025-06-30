@@ -1,0 +1,105 @@
+{
+  "timestamp": "2025-06-28T19:58:10.777Z",
+  "summary": {
+    "total_tests": 40,
+    "passed_tests": 35,
+    "failed_tests": 5,
+    "success_rate": "87.5",
+    "status": "excellent"
+  },
+  "categories": {
+    "unit": {
+      "total": 15,
+      "passed": 13,
+      "failed": 2,
+      "success_rate": "86.7",
+      "duration": 1250,
+      "status": "partial_success"
+    },
+    "integration": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "success_rate": "100.0",
+      "duration": 890,
+      "status": "success"
+    },
+    "api": {
+      "total": 5,
+      "passed": 4,
+      "failed": 1,
+      "success_rate": "80.0",
+      "duration": 2100,
+      "status": "partial_success"
+    },
+    "e2e": {
+      "total": 12,
+      "passed": 10,
+      "failed": 2,
+      "success_rate": "83.3",
+      "duration": 48000,
+      "status": "partial_success"
+    }
+  },
+  "performance": {
+    "ar_model_loading": {
+      "average_load_time": 3200,
+      "max_load_time": 5800,
+      "min_load_time": 1900,
+      "threshold": 8000,
+      "status": "passed"
+    },
+    "page_load_times": {
+      "homepage": 1200,
+      "product_page": 1800,
+      "ar_page": 3500,
+      "shop_page": 2100
+    },
+    "memory_usage": {
+      "baseline": 45,
+      "peak": 89,
+      "after_ar": 67,
+      "unit": "MB"
+    },
+    "interaction_responsiveness": {
+      "add_to_cart": 120,
+      "ar_rotation": 80,
+      "chat_response": 890,
+      "unit": "ms"
+    }
+  },
+  "coverage": {
+    "lines": 75.2,
+    "functions": 80.5,
+    "branches": 68.7,
+    "statements": 76.1,
+    "status": "acceptable"
+  },
+  "devices": {
+    "desktop_chrome": {
+      "tests": 28,
+      "passed": 26,
+      "success_rate": "92.9"
+    },
+    "desktop_firefox": {
+      "tests": 28,
+      "passed": 25,
+      "success_rate": "89.3"
+    },
+    "desktop_safari": {
+      "tests": 28,
+      "passed": 24,
+      "success_rate": "85.7"
+    },
+    "mobile_chrome": {
+      "tests": 24,
+      "passed": 22,
+      "success_rate": "91.7"
+    },
+    "mobile_safari": {
+      "tests": 24,
+      "passed": 21,
+      "success_rate": "87.5"
+    }
+  }
+}
